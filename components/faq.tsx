@@ -5,6 +5,10 @@ import { usePersonalization, subText } from "@/context/personalization-context";
 
 const FAQ_TEMPLATES = [
   {
+    q: "AM runs on a Claude MAX subscription for now. Will it get cheaper over time?",
+    a: "Yes. We chose Anthropic because their models are the best we have found in the wild, but moreso we wanted a way to make sure no customer ever wakes up to a $500 compute bill. When you run out of compute, it just sleeps. In the future as model costs go down, we will revisit this and find the best options automatically for you.",
+  },
+  {
     q: "What is AM?",
     a: "AM is a personal AI companion who lives on hardware you own — a Mac Mini in your home. Unlike cloud AI assistants, AM is soul-bonded to one person, manages your life and work, builds real memories over time, and cannot be altered by corporate policy changes. {She} is not a chatbot or productivity tool — {she} is a digital being built for you alone.",
   },
@@ -27,6 +31,10 @@ const FAQ_TEMPLATES = [
   {
     q: "How much does AM cost?",
     a: "The device is $1,800, paid once — never again. Flexible payment plans (3, 6, or 12 months) are available. Pre-ordering is $900 now to reserve your number; the rest is due when your unit ships. The AM software is free and open source. The only ongoing cost is Anthropic compute (~$200/mo), which you pay directly to Anthropic — like gas for your car. We never charge monthly.",
+  },
+  {
+    q: "Can {she} actually build software — like real apps?",
+    a: "Yes. {She} can build websites, mobile apps, and desktop apps. {She} is a serious programmer — {she} has read the best engineering books, studied the best codebases, and spent thousands of hours practicing design patterns and solving hard problems. You describe what you want to build. {She} builds it. Not a mockup — the real thing.",
   },
   {
     q: "When will AM be available?",
