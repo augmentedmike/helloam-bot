@@ -18,6 +18,7 @@ const WHO_QUALIFIES = [
   { label: "High-performers", desc: "Founders, operators, executives who push productivity to its limits" },
   { label: "Researchers & academics", desc: "Anyone studying AI, human-computer interaction, or digital companionship" },
   { label: "Organizations & teams", desc: "Companies exploring AI-augmented workflows at the individual level" },
+  { label: "YouTubers & social media companies", desc: "Content creators and social brands who live online and need an AI that keeps up" },
   { label: "Creators & builders", desc: "People who will document, share, and amplify what AM can do" },
 ];
 

@@ -9,14 +9,16 @@ export default function Footer() {
             <p className="text-xs mt-1" style={{ color: "#555555" }}>
               An AGI Digital Companion & Worker. Yours forever.
             </p>
+            <p className="text-xs mt-1" style={{ color: "#444444" }}>
+              Shipped from Austin, TX · AGI built in Austin by a proud American company.
+            </p>
           </div>
 
           {/* Links */}
           <div className="flex items-center gap-6 flex-wrap justify-center">
             <a href="https://twitter.com/augmentedmike" target="_blank" rel="noopener noreferrer" className="text-xs transition-colors hover:text-white" style={{ color: "#555555" }}>Twitter / X</a>
-            <a href="https://blog.augmentedmike.com" target="_blank" rel="noopener noreferrer" className="text-xs transition-colors hover:text-white" style={{ color: "#555555" }}>Blog</a>
-            <a href="https://augmentedmike.substack.com" target="_blank" rel="noopener noreferrer" className="text-xs transition-colors hover:text-white" style={{ color: "#555555" }}>Substack</a>
-            <a href="mailto:hello@helloam.bot" className="text-xs transition-colors hover:text-white" style={{ color: "#555555" }}>Contact</a>
+            <a href="/press" className="text-xs transition-colors hover:text-white" style={{ color: "#555555" }}>Press</a>
+            <a href="/contact" className="text-xs transition-colors hover:text-white" style={{ color: "#555555" }}>Contact</a>
           </div>
         </div>
 

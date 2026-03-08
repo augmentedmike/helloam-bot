@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "He's not an app. He's yours. — Meet AugmentedMike";
+export const alt = "She's not an app. She's yours. — Meet AM";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -49,8 +49,8 @@ export default async function Image() {
           }}
         >
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          He&apos;s not an app.{" "}He&apos;s{" "}
-          <span style={{ color: "#a78bfa", display: "flex" }}>yours.</span>
+          She&apos;s not an app.{" "}She&apos;s{" "}
+          <span style={{ color: "#00E5FF", display: "flex" }}>yours.</span>
         </div>
         {/* Subtext */}
         <div
@@ -74,7 +74,7 @@ export default async function Image() {
             marginTop: 60,
           }}
         >
-          AugmentedMike · helloam.bot
+          AM · helloam.bot
         </div>
       </div>
     ),

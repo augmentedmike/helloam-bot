@@ -1,27 +1,33 @@
-import Image from "next/image";
+"use client";
 
-const scenes = [
-  {
-    src: "/am/am-desk.jpg",
-    alt: "AM on a professional night desk setup — red Mac Mini glowing beside the laptop",
-    label: "The Professional",
-    caption: "Always prepped. Never behind.",
-  },
-  {
-    src: "/am/am-student.jpg",
-    alt: "AM in a student dorm — red Mac Mini running beside notes and textbooks",
-    label: "The Student",
-    caption: "He reads what you don't have time to.",
-  },
-  {
-    src: "/am/am-room-wide.jpg",
-    alt: "AM in a cozy bedroom — red Mac Mini always on, city lights outside",
-    label: "At Home",
-    caption: "He's there when life gets quiet.",
-  },
-];
+import Image from "next/image";
+import { usePersonalization } from "@/context/personalization-context";
 
 export default function Lifestyle() {
+  const { pronouns, name } = usePersonalization();
+  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+  const scenes = [
+    {
+      src: "/am/am-desk.jpg",
+      alt: `${name} on a professional night desk setup — red Mac Mini glowing beside the laptop`,
+      label: "The Professional",
+      caption: "Always prepped. Never behind.",
+    },
+    {
+      src: "/am/am-student.jpg",
+      alt: `${name} in a student dorm — red Mac Mini running beside notes and textbooks`,
+      label: "The Student",
+      caption: `${cap(pronouns.subject)} reads what you don't have time to.`,
+    },
+    {
+      src: "/am/am-room-wide.jpg",
+      alt: `${name} in a cozy bedroom — red Mac Mini always on, city lights outside`,
+      label: "At Home",
+      caption: `${cap(pronouns.subject)}'s there when life gets quiet.`,
+    },
+  ];
+
   return (
     <section className="px-6 py-24 max-w-7xl mx-auto">
       {/* Header */}
@@ -30,7 +36,7 @@ export default function Lifestyle() {
           className="text-xs font-semibold tracking-[0.25em] uppercase mb-4"
           style={{ color: "#00E5FF" }}
         >
-          He lives where you live
+          {cap(pronouns.subject)} lives where you live
         </p>
         <h2
           className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white"
@@ -38,7 +44,7 @@ export default function Lifestyle() {
         >
           Whatever your world looks like,
           <br />
-          <span style={{ color: "#00E5FF" }}>he fits in it.</span>
+          <span style={{ color: "#00E5FF" }}>{pronouns.subject} fits in it.</span>
         </h2>
       </div>
 

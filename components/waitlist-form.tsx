@@ -1,19 +1,14 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-
-const COLORS = [
-  { id: "red",    label: "AM Red",    hex: "#CC2200" },
-  { id: "black",  label: "Midnight",  hex: "#1a1a1a" },
-  { id: "silver", label: "Starlight", hex: "#c8c8c0" },
-  { id: "white",  label: "Arctic White", hex: "#f0efeb" },
-];
+import { COLORS } from "@/lib/colors";
+import { useColor } from "@/context/color-context";
 
 export default function WaitlistForm() {
+  const { selectedColor, setSelectedColor } = useColor();
   const [mode, setMode] = useState<"preorder" | "list">("preorder");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [color, setColor] = useState("red");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [preorderNumber, setPreorderNumber] = useState<number | null>(null);
@@ -27,7 +22,7 @@ export default function WaitlistForm() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email: email.trim(), type: mode, color: mode === "preorder" ? color : undefined }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim(), type: mode, color: mode === "preorder" ? selectedColor : undefined }),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -47,7 +42,11 @@ export default function WaitlistForm() {
   if (status === "success") {
     return (
       <div className="rounded-2xl p-10 text-center" style={{ background: "rgba(0,229,255,0.06)", border: "1px solid rgba(0,229,255,0.20)" }}>
-        <div className="text-4xl mb-4">✓</div>
+        <div className="flex items-center justify-center w-12 h-12 rounded-full mx-auto mb-4" style={{ background: "rgba(0,229,255,0.15)", border: "1px solid rgba(0,229,255,0.3)" }}>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M4 11L9 16L18 6" stroke="#00E5FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
         {mode === "preorder" && preorderNumber ? (
           <>
             <h3 className="text-3xl font-bold mb-2" style={{ color: "#00E5FF", fontFamily: "var(--font-space-grotesk)" }}>
@@ -74,6 +73,9 @@ export default function WaitlistForm() {
     border: "1px solid rgba(255,255,255,0.10)",
     fontFamily: "var(--font-dm-sans), sans-serif",
   };
+
+  // Only show available colors in the waitlist form picker
+  const availableColors = COLORS.filter((c) => c.available);
 
   return (
     <div>
@@ -125,11 +127,11 @@ export default function WaitlistForm() {
           <div>
             <p className="text-xs font-semibold mb-3" style={{ color: "#aaaaaa" }}>Preferred color (can change later)</p>
             <div className="flex gap-3">
-              {COLORS.map((c) => (
+              {availableColors.map((c) => (
                 <button
                   type="button"
                   key={c.id}
-                  onClick={() => setColor(c.id)}
+                  onClick={() => setSelectedColor(c.id)}
                   title={c.label}
                   className="flex flex-col items-center gap-1.5"
                 >
@@ -137,12 +139,12 @@ export default function WaitlistForm() {
                     className="w-8 h-8 rounded-full transition-all duration-200"
                     style={{
                       background: c.hex,
-                      border: color === c.id ? `2px solid ${c.hex}` : "2px solid transparent",
-                      outline: color === c.id ? "2px solid rgba(255,255,255,0.3)" : "none",
-                      outlineOffset: "2px",
+                      outline: selectedColor === c.id ? `2px solid ${c.hex}` : "2px solid transparent",
+                      outlineOffset: "3px",
+                      boxShadow: selectedColor === c.id ? `0 0 12px ${c.hex}60` : "none",
                     }}
                   />
-                  <span className="text-[10px]" style={{ color: color === c.id ? "#ffffff" : "#444444" }}>{c.label}</span>
+                  <span className="text-[10px] font-medium" style={{ color: selectedColor === c.id ? "#ffffff" : "#444444" }}>{c.label}</span>
                 </button>
               ))}
             </div>
