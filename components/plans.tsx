@@ -121,6 +121,16 @@ export default function Plans() {
 
         <p className="text-center mt-8 text-sm" style={{ color: "#444444" }}>
           All plans optional. Your AM works without a plan — these exist for owners who want human support behind the AI.
+          <br />
+          Need something beyond that?{" "}
+          <a
+            href="mailto:augmentedmike@gmail.com"
+            className="transition-colors hover:text-white"
+            style={{ color: "#666666", textDecoration: "underline" }}
+          >
+            augmentedmike@gmail.com
+          </a>{" "}
+          — let&apos;s talk.
         </p>
       </div>
     </section>
