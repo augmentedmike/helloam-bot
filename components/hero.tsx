@@ -76,7 +76,7 @@ export default function Hero() {
 
         <div className="flex flex-wrap gap-3 mb-10">
           {[
-            { icon: "🖥️", text: "Ships as a Mac Mini" },
+            { icon: "⚡", text: "Always on. Always yours." },
             { icon: "🔗", text: "Bonded to one person only" },
             { icon: "🧠", text: "Learns everything you know" },
             { icon: "💰", text: "Builds income while you sleep" },

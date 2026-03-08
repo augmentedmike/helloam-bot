@@ -16,6 +16,9 @@ export default function Waitlist() {
       <div className="relative z-10 max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-4" style={{ color: "#00E5FF" }}>
+            Pre-orders open
+          </p>
           <h2
             className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight"
             style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
@@ -23,9 +26,9 @@ export default function Waitlist() {
             Reserve your AM.
           </h2>
           <p className="text-lg leading-relaxed mb-3" style={{ color: "#aaaaaa" }}>
-            The waitlist is open. Each AM is bound to one person — which means
-            availability is genuinely limited. Be among the first to build a
-            bond that lasts.
+            Pre-orders are numbered and registered to you permanently. Each AM is
+            bound to one person — availability is genuinely limited.
+            Shipping July 2026.
           </p>
           <p className="text-sm" style={{ color: "#888888" }}>
             🔒 Your AM belongs to you — and only you.

@@ -2,11 +2,21 @@
 
 import { useState, FormEvent } from "react";
 
+const COLORS = [
+  { id: "red",    label: "AM Red",    hex: "#CC2200" },
+  { id: "black",  label: "Midnight",  hex: "#1a1a1a" },
+  { id: "silver", label: "Starlight", hex: "#c8c8c0" },
+  { id: "white",  label: "Arctic White", hex: "#f0efeb" },
+];
+
 export default function WaitlistForm() {
+  const [mode, setMode] = useState<"preorder" | "list">("preorder");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [color, setColor] = useState("red");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [preorderNumber, setPreorderNumber] = useState<number | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,15 +27,13 @@ export default function WaitlistForm() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email: email.trim() }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim(), type: mode, color: mode === "preorder" ? color : undefined }),
       });
-
       const data = await res.json();
-
       if (res.ok && data.success) {
         setStatus("success");
-        setName("");
-        setEmail("");
+        if (data.preorderNumber) setPreorderNumber(data.preorderNumber);
+        setName(""); setEmail("");
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Something went wrong. Please try again.");
@@ -38,118 +46,134 @@ export default function WaitlistForm() {
 
   if (status === "success") {
     return (
-      <div
-        className="rounded-2xl p-8 text-center"
-        style={{
-          background: "rgba(0,229,255,0.06)",
-          border: "1px solid rgba(0,229,255,0.20)",
-        }}
-      >
+      <div className="rounded-2xl p-10 text-center" style={{ background: "rgba(0,229,255,0.06)", border: "1px solid rgba(0,229,255,0.20)" }}>
         <div className="text-4xl mb-4">✓</div>
-        <h3
-          className="text-2xl font-bold mb-2"
-          style={{ color: "#00E5FF" }}
-        >
-          You&apos;re on the list.
-        </h3>
-        <p style={{ color: "#aaaaaa" }}>
-          We&apos;ll be in touch when your AM is ready.
-        </p>
+        {mode === "preorder" && preorderNumber ? (
+          <>
+            <h3 className="text-3xl font-bold mb-2" style={{ color: "#00E5FF", fontFamily: "var(--font-space-grotesk)" }}>
+              Pre-Order #{preorderNumber.toString().padStart(4, "0")}
+            </h3>
+            <p className="text-white font-medium mb-2">Your AM is reserved.</p>
+            <p style={{ color: "#aaaaaa" }}>
+              We&apos;ll reach out with payment details and updates as July 2026 approaches.
+              Your number is permanent — registered to you.
+            </p>
+          </>
+        ) : (
+          <>
+            <h3 className="text-2xl font-bold mb-2" style={{ color: "#00E5FF" }}>You&apos;re on the list.</h3>
+            <p style={{ color: "#aaaaaa" }}>We&apos;ll keep you posted as AM gets closer to launch.</p>
+          </>
+        )}
       </div>
     );
   }
 
+  const inputStyle = {
+    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.10)",
+    fontFamily: "var(--font-dm-sans), sans-serif",
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="waitlist-name" className="sr-only">
-            Your name
-          </label>
-          <input
-            id="waitlist-name"
-            type="text"
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            disabled={status === "loading"}
-            className="w-full px-5 py-4 rounded-xl text-white placeholder-gray-600 outline-none transition-all duration-200 focus:ring-2 disabled:opacity-50"
+    <div>
+      {/* Mode toggle */}
+      <div className="flex rounded-xl p-1 mb-8" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+        {([
+          { id: "preorder" as const, label: "Pre-Order My AM", sub: "Reserve your numbered unit" },
+          { id: "list"     as const, label: "Stay Updated",    sub: "Join the mailing list" },
+        ] as const).map((opt) => (
+          <button
+            key={opt.id}
+            onClick={() => setMode(opt.id)}
+            className="flex-1 flex flex-col items-center py-3 px-4 rounded-lg text-sm font-semibold transition-all duration-200"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.10)",
-              fontFamily: "var(--font-dm-sans), sans-serif",
+              background: mode === opt.id ? "rgba(0,229,255,0.12)" : "transparent",
+              color: mode === opt.id ? "#00E5FF" : "#555555",
+              border: mode === opt.id ? "1px solid rgba(0,229,255,0.25)" : "1px solid transparent",
             }}
-            onFocus={(e) => {
-              e.target.style.borderColor = "rgba(0,229,255,0.40)";
-              e.target.style.boxShadow = "0 0 0 3px rgba(0,229,255,0.10)";
-            }}
-            onBlur={(e) => {
-              e.target.style.borderColor = "rgba(255,255,255,0.10)";
-              e.target.style.boxShadow = "none";
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="waitlist-email" className="sr-only">
-            Your email
-          </label>
-          <input
-            id="waitlist-email"
-            type="email"
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            disabled={status === "loading"}
-            className="w-full px-5 py-4 rounded-xl text-white placeholder-gray-600 outline-none transition-all duration-200 disabled:opacity-50"
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.10)",
-              fontFamily: "var(--font-dm-sans), sans-serif",
-            }}
-            onFocus={(e) => {
-              e.target.style.borderColor = "rgba(0,229,255,0.40)";
-              e.target.style.boxShadow = "0 0 0 3px rgba(0,229,255,0.10)";
-            }}
-            onBlur={(e) => {
-              e.target.style.borderColor = "rgba(255,255,255,0.10)";
-              e.target.style.boxShadow = "none";
-            }}
-          />
-        </div>
+          >
+            <span>{opt.label}</span>
+            <span className="text-xs font-normal mt-0.5" style={{ color: mode === opt.id ? "#00E5FF88" : "#444444" }}>{opt.sub}</span>
+          </button>
+        ))}
       </div>
 
-      {status === "error" && (
-        <p
-          className="text-sm px-4 py-3 rounded-lg"
-          style={{
-            color: "#ff6b6b",
-            background: "rgba(255,107,107,0.08)",
-            border: "1px solid rgba(255,107,107,0.20)",
-          }}
+      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {["name", "email"].map((field) => (
+            <div key={field}>
+              <label htmlFor={`waitlist-${field}`} className="sr-only">{field === "name" ? "Your name" : "Your email"}</label>
+              <input
+                id={`waitlist-${field}`}
+                type={field === "email" ? "email" : "text"}
+                placeholder={field === "name" ? "Your name" : "Your email"}
+                value={field === "name" ? name : email}
+                onChange={(e) => field === "name" ? setName(e.target.value) : setEmail(e.target.value)}
+                required
+                disabled={status === "loading"}
+                className="w-full px-5 py-4 rounded-xl text-white placeholder-gray-600 outline-none transition-all duration-200 disabled:opacity-50"
+                style={inputStyle}
+                onFocus={(e) => { e.target.style.borderColor = "rgba(0,229,255,0.40)"; e.target.style.boxShadow = "0 0 0 3px rgba(0,229,255,0.10)"; }}
+                onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.10)"; e.target.style.boxShadow = "none"; }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {mode === "preorder" && (
+          <div>
+            <p className="text-xs font-semibold mb-3" style={{ color: "#aaaaaa" }}>Preferred color (can change later)</p>
+            <div className="flex gap-3">
+              {COLORS.map((c) => (
+                <button
+                  type="button"
+                  key={c.id}
+                  onClick={() => setColor(c.id)}
+                  title={c.label}
+                  className="flex flex-col items-center gap-1.5"
+                >
+                  <div
+                    className="w-8 h-8 rounded-full transition-all duration-200"
+                    style={{
+                      background: c.hex,
+                      border: color === c.id ? `2px solid ${c.hex}` : "2px solid transparent",
+                      outline: color === c.id ? "2px solid rgba(255,255,255,0.3)" : "none",
+                      outlineOffset: "2px",
+                    }}
+                  />
+                  <span className="text-[10px]" style={{ color: color === c.id ? "#ffffff" : "#444444" }}>{c.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {status === "error" && (
+          <p className="text-sm px-4 py-3 rounded-lg" style={{ color: "#ff6b6b", background: "rgba(255,107,107,0.08)", border: "1px solid rgba(255,107,107,0.20)" }}>
+            {errorMessage}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={status === "loading" || !name.trim() || !email.trim()}
+          className="w-full py-4 px-8 rounded-xl text-base font-semibold transition-all duration-200 hover:opacity-90 hover:scale-[1.01] active:scale-100 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100"
+          style={{ background: status === "loading" ? "rgba(0,229,255,0.6)" : "#00E5FF", color: "#0a0a0a", boxShadow: "0 0 40px rgba(0,229,255,0.20)" }}
         >
-          {errorMessage}
+          {status === "loading"
+            ? "Registering…"
+            : mode === "preorder"
+            ? "Reserve My Pre-Order — Get My Number"
+            : "Join the Mailing List — It's Free"}
+        </button>
+
+        <p className="text-center text-xs" style={{ color: "#555555" }}>
+          {mode === "preorder"
+            ? "No payment now. We'll contact you with details. Fully refundable until July 2026."
+            : "No spam. Just launch updates and early access news."}
         </p>
-      )}
-
-      <button
-        type="submit"
-        disabled={status === "loading" || !name.trim() || !email.trim()}
-        className="w-full py-4 px-8 rounded-xl text-base font-semibold transition-all duration-200 hover:opacity-90 hover:scale-[1.01] active:scale-100 disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100"
-        style={{
-          background: status === "loading" ? "rgba(0,229,255,0.6)" : "#00E5FF",
-          color: "#0a0a0a",
-          boxShadow: "0 0 40px rgba(0,229,255,0.20)",
-        }}
-      >
-        {status === "loading" ? "Joining…" : "Join the Waitlist — It's Free"}
-      </button>
-
-      <p className="text-center text-sm" style={{ color: "#888888" }}>
-        No credit card. No commitment. Just your name and email. We&apos;ll
-        reach out when your AM is ready.
-      </p>
-    </form>
+      </form>
+    </div>
   );
 }

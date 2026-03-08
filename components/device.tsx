@@ -159,7 +159,7 @@ export default function Device() {
               </span>
             </div>
             <p className="text-sm" style={{ color: "#555555" }}>
-              Fully refundable until your unit ships · Shipping Spring 2026
+              Fully refundable until your unit ships · Shipping July 2026
             </p>
           </div>
 
