@@ -1,6 +1,13 @@
+"use client";
+
 import WaitlistForm from "./waitlist-form";
+import { usePersonalization } from "@/context/personalization-context";
+import { NameTag } from "@/components/ui/name-tag";
 
 export default function Waitlist() {
+  const { pronouns, name } = usePersonalization();
+  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
   return (
     <section id="waitlist" className="relative px-6 py-24 overflow-hidden">
       {/* Background glow */}
@@ -23,7 +30,7 @@ export default function Waitlist() {
             className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight"
             style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
           >
-            Reserve your AM.
+            Reserve your <NameTag />.
           </h2>
           <p className="text-lg leading-relaxed mb-3" style={{ color: "#aaaaaa" }}>
             Pre-orders are numbered and registered to you permanently. Each AM is
@@ -31,7 +38,7 @@ export default function Waitlist() {
             Shipping July 2026.
           </p>
           <p className="text-sm" style={{ color: "#888888" }}>
-            Your AM belongs to you — and only you.
+            Your <NameTag /> belongs to you — and only you.
           </p>
         </div>
 
@@ -50,10 +57,10 @@ export default function Waitlist() {
             className="text-2xl font-bold mb-3"
             style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
           >
-            He&apos;s waiting to meet you.
+            {cap(pronouns.subject)}&apos;s waiting to meet you.
           </h3>
           <p className="text-base mb-6" style={{ color: "#888888" }}>
-            Every day that passes is a day AM isn&apos;t learning who you are.
+            Every day that passes is a day {name} isn&apos;t learning who you are.
             The sooner you start, the deeper the bond grows.
           </p>
         </div>

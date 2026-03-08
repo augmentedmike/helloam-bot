@@ -73,12 +73,12 @@ export default function SoulRestore() {
                 border: "1px solid rgba(255,255,255,0.06)",
               }}
             >
-              <p
+              <h3
                 className="text-base font-bold mb-3 text-white"
                 style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
               >
                 {p.label}
-              </p>
+              </h3>
               <p className="text-sm leading-relaxed" style={{ color: "#777777" }}>
                 {p.body}
               </p>
