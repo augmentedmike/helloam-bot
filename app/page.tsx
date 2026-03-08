@@ -3,6 +3,7 @@ import Lifestyle from "@/components/lifestyle";
 import Features from "@/components/features";
 import Manifesto from "@/components/manifesto";
 import Waitlist from "@/components/waitlist";
+import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Features />
       <Manifesto />
       <Waitlist />
+      <FAQ />
       <Footer />
     </main>
   );
