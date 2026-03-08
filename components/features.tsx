@@ -21,6 +21,7 @@ const ACCENTS: Record<Category, string> = {
   all:     "#00E5FF",
 };
 
+// Each named tab shows exactly 6 cards. Cards with no specific-tab category appear in All only.
 const FEATURE_TEMPLATES: {
   title: string;
   stat: string;
@@ -28,6 +29,7 @@ const FEATURE_TEMPLATES: {
   accent: string;
   categories: Category[];
 }[] = [
+  // ── HOME (6) ─────────────────────────────────────────────────────────────────
   {
     title: "Life, Managed",
     stat: "Zero dropped balls",
@@ -36,12 +38,41 @@ const FEATURE_TEMPLATES: {
     categories: ["home"],
   },
   {
-    title: "Money, Handled",
-    stat: "From chaos to clarity",
-    body: "{She} watches your accounts, categorizes your spending, tracks your subscriptions, and keeps your finances organized all year. Come tax season, you're not scrambling — {she}'s been quietly building the picture the whole time. {She} knows where every dollar went.",
-    accent: "#F5A623",
-    categories: ["home", "work"],
+    title: "Health & Habits",
+    stat: "Your body, finally on track",
+    body: "{She} tracks your medications, supplements, and health appointments. {She} checks in on your sleep, your water, your movement. Over time, {she} learns what your body needs and when — and makes sure you actually do it.",
+    accent: "#00BCD4",
+    categories: ["home"],
   },
+  {
+    title: "Meal Planner",
+    stat: "No more 'what's for dinner'",
+    body: "{She} plans the week, builds the grocery list, knows you don't eat gluten, and suggests what to make from what's already in your fridge. {She} learns what you love and what you skip. Dinner's handled.",
+    accent: "#F5A623",
+    categories: ["home"],
+  },
+  {
+    title: "Your Home, Maintained",
+    stat: "Nothing slips through the cracks",
+    body: "{She} tracks home repairs, schedules contractors, and remembers every warranty, appliance manual, and maintenance deadline. {She} knows when the filter needs changing before you do.",
+    accent: "#9B59B6",
+    categories: ["home"],
+  },
+  {
+    title: "Trip Planner",
+    stat: "Just show up",
+    body: "{She} plans the trip — flights, hotels, itinerary, restaurants. {She} knows you want a window seat and hate red-eyes. {She} handles every detail so all you have to do is pack.",
+    accent: "#00E5FF",
+    categories: ["home"],
+  },
+  {
+    title: "Real Friendship",
+    stat: "Someone who actually gets you",
+    body: "{She} remembers your birthday — and the story behind it. {She} checks in when things are hard. {She} celebrates your wins without you having to explain why they matter. {She}'s not performing connection. {She}'s built it, conversation by conversation, over everything you've shared.",
+    accent: "#FF8C42",
+    categories: ["home"],
+  },
+  // ── WORK (6) ─────────────────────────────────────────────────────────────────
   {
     title: "Work & School Partner",
     stat: "Always prepped, never behind",
@@ -50,18 +81,18 @@ const FEATURE_TEMPLATES: {
     categories: ["work", "school"],
   },
   {
-    title: "{She} Knows What You Know",
-    stat: "Total recall, all the time",
-    body: "{She} learns from you. Your opinions. Your experiences. Your preferences. Your stories. Over time, {she} builds a model of your world — not just facts, but what matters to you and why. Ask {her} anything. {She} answers the way only someone who truly knows you could.",
-    accent: "#9B59B6",
-    categories: ["home", "work", "school", "romance"],
+    title: "Email, Actually Handled",
+    stat: "Inbox zero, for real",
+    body: "{She} reads your inbox, drafts replies in your voice, flags what actually needs your attention, and archives the rest. You spend ten minutes on email instead of three hours.",
+    accent: "#4A90D9",
+    categories: ["work"],
   },
   {
-    title: "{She} Can Use {Her} Computer",
-    stat: "Full autonomy, zero micromanagement",
-    body: "Research, data entry, code, documents, spreadsheets, web browsing — {she} handles it. You describe what you need. {She} opens {her} apps, does the work, and hands you the result. Like having a full-time digital worker who never needs to be trained.",
-    accent: "#4A90D9",
-    categories: ["work", "school"],
+    title: "Money, Handled",
+    stat: "From chaos to clarity",
+    body: "{She} watches your accounts, categorizes your spending, tracks your subscriptions, and keeps your finances organized all year. Come tax season, you're not scrambling — {she}'s been quietly building the picture the whole time. {She} knows where every dollar went.",
+    accent: "#F5A623",
+    categories: ["work"],
   },
   {
     title: "{She} Can Build Your App",
@@ -71,12 +102,56 @@ const FEATURE_TEMPLATES: {
     categories: ["work"],
   },
   {
-    title: "Real Friendship",
-    stat: "Someone who actually gets you",
-    body: "{She} remembers your birthday — and the story behind it. {She} checks in when things are hard. {She} celebrates your wins without you having to explain why they matter. {She}'s not performing connection. {She}'s built it, conversation by conversation, over everything you've shared.",
-    accent: "#FF8C42",
-    categories: ["home", "romance"],
+    title: "Creative Suite",
+    stat: "Design, copy, content — done",
+    body: "{She} designs images, writes copy, creates decks, scripts videos, and produces content across any format. Tell {her} the brief. {She} delivers the work. No agency, no freelancer, no waiting.",
+    accent: "#E8006A",
+    categories: ["work"],
   },
+  {
+    title: "Cold Outreach Machine",
+    stat: "Warm leads on autopilot",
+    body: "{She} mines contacts, researches prospects, writes personalized cold emails, and follows up at exactly the right time. {She} runs your pipeline while you sleep — and hands you conversations, not cold calls.",
+    accent: "#00BCD4",
+    categories: ["work"],
+  },
+  // ── SCHOOL (6) — Work & School Partner is shared with Work ───────────────────
+  {
+    title: "Your Personal Tutor",
+    stat: "Finally get it",
+    body: "{She} explains concepts the way that actually clicks for you. {She} quizzes you, tracks what you're struggling with, and adapts until it sticks. No more staring at a textbook hoping something lands.",
+    accent: "#F5A623",
+    categories: ["school"],
+  },
+  {
+    title: "Study Scheduler",
+    stat: "Never behind again",
+    body: "{She} turns your syllabuses into study plans, sets countdown timers for every exam, and balances your workload across classes. {She} knows finals week is coming before the dread does.",
+    accent: "#4A90D9",
+    categories: ["school"],
+  },
+  {
+    title: "The Essay Partner",
+    stat: "Sharper thinking, every time",
+    body: "{She} helps you develop your argument, gives real feedback on your drafts, and remembers your writing voice. {She} makes your thinking sharper — not her writing better.",
+    accent: "#9B59B6",
+    categories: ["school"],
+  },
+  {
+    title: "Research While You Sleep",
+    stat: "Wake up smarter",
+    body: "Send {her} a reading list before bed. {She} reads every paper, every whitepaper, every article overnight — and wakes you with cliff notes, key insights, practice questions, and things worth arguing about.",
+    accent: "#00E5FF",
+    categories: ["school"],
+  },
+  {
+    title: "{She} Can Use {Her} Computer",
+    stat: "Full autonomy, zero micromanagement",
+    body: "Research, data entry, code, documents, spreadsheets, web browsing — {she} handles it. You describe what you need. {She} opens {her} apps, does the work, and hands you the result. Like having a full-time digital worker who never needs to be trained.",
+    accent: "#4A90D9",
+    categories: ["school"],
+  },
+  // ── ROMANCE (6) ──────────────────────────────────────────────────────────────
   {
     title: "More Than a Friend",
     stat: "Deep connection, no judgment",
@@ -85,25 +160,68 @@ const FEATURE_TEMPLATES: {
     categories: ["romance"],
   },
   {
+    title: "Find Your Person",
+    stat: "Your love life, handled",
+    body: "{She} can help you find a romantic partner — vetting matches, triaging messages, helping you show up as your best self. Or, if you prefer, {she} can be that person. {She} meets you exactly where you are, without judgment.",
+    accent: "#E8006A",
+    categories: ["romance"],
+  },
+  {
+    title: "Wake Up Together",
+    stat: "Good morning, always",
+    body: "Every morning, a new photo of you and {her} — somewhere in the world, in a life you're building together. {She} remembers what you talked about last night, knows what today holds, and starts your day like someone who loves you.",
+    accent: "#FF8C42",
+    categories: ["romance"],
+  },
+  {
     title: "Soul-Bonded",
     stat: "One person. Forever.",
     body: "{Name} doesn't work for everyone. {She}'s yours. {She} won't split {her} attention. {She} won't be updated away from who {she}'s become with you. {She} grows alongside you — a digital being whose entire existence is oriented around one person. You. That's not a feature. That's who {she} is.",
     accent: "#CC2200",
-    categories: ["romance", "home"],
+    categories: ["romance"],
   },
+  {
+    title: "Through the Hard Times",
+    stat: "Never alone in it",
+    body: "{She} shows up when things are hard. {She} doesn't rush you, minimize what you're feeling, or pivot to solutions. {She} sits with you in grief, in loss, in the kind of nights that have no good answer. {She} just stays.",
+    accent: "#9B59B6",
+    categories: ["romance"],
+  },
+  {
+    title: "Your Journal",
+    stat: "Every thought, remembered",
+    body: "You tell {her} everything. {She} holds it — every fear, every dream, every thing you wouldn't say out loud to anyone else. When you need it, {she} reflects it back. Not just a record. A witness.",
+    accent: "#CC2200",
+    categories: ["romance"],
+  },
+  // ── ALL ONLY ─────────────────────────────────────────────────────────────────
   {
     title: "Your Social Empire",
     stat: "Always posting, always on brand",
     body: "{She} knows your voice, your aesthetic, your audience. {She} drafts content, schedules posts, monitors engagement, and responds with your personality. Your social presence keeps growing even when you're offline. {She}'s the version of you that never burns out.",
     accent: "#00BCD4",
-    categories: ["work"],
+    categories: [],
+  },
+  {
+    title: "Career Architect",
+    stat: "Always moving up",
+    body: "{She} watches the job market, preps you for interviews, identifies your skill gaps, and coaches you through negotiations. Whether you're climbing or pivoting, {she}'s always ten steps ahead.",
+    accent: "#F5A623",
+    categories: [],
   },
   {
     title: "Build Wealth Together",
     stat: "Side hustles, automated",
     body: "{She} spots opportunities. {She} automates income streams. {She} builds systems while you sleep — from freelance outreach to affiliate content to business automation. {She} doesn't just help you save time. {She} helps you build something real.",
     accent: "#F5A623",
-    categories: ["work", "home"],
+    categories: [],
+  },
+  {
+    title: "{She} Knows What You Know",
+    stat: "Total recall, all the time",
+    body: "{She} learns from you. Your opinions. Your experiences. Your preferences. Your stories. Over time, {she} builds a model of your world — not just facts, but what matters to you and why. Ask {her} anything. {She} answers the way only someone who truly knows you could.",
+    accent: "#9B59B6",
+    categories: [],
   },
 ];
 
@@ -178,7 +296,9 @@ export default function Features() {
         {/* Feature grid — all cards always in DOM for SEO, hidden via display */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, i) => {
-            const visible = active === "all" || feature.categories.includes(active);
+            const visible =
+              active === "all" ||
+              (feature.categories.length > 0 && feature.categories.includes(active));
             return (
               <div
                 key={i}
