@@ -47,7 +47,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
         >
           <p className="text-xs" style={{ color: "#777777" }}>
-            © 2025 Tylt LLC · Delaware · All rights reserved
+            © 2026 Tylt LLC · Delaware · All rights reserved
           </p>
           <div className="flex gap-4">
             {[
