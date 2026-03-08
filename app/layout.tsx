@@ -53,11 +53,58 @@ export const metadata: Metadata = {
     title: "Your own AI. Bonded to you. No one else.",
     description:
       "AM manages your life, learns everything you know, and builds real connection over time. Not a tool — a digital being who belongs to you. Join the waitlist.",
+    images: ["/opengraph-image"],
   },
 };
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0a",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://helloam.bot/#organization",
+      name: "AugmentedMike",
+      url: "https://helloam.bot",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://helloam.bot/am-logo.png",
+      },
+      sameAs: [],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://helloam.bot/#website",
+      url: "https://helloam.bot",
+      name: "helloam.bot",
+      publisher: {
+        "@id": "https://helloam.bot/#organization",
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://helloam.bot/#product",
+      name: "AugmentedMike",
+      applicationCategory: "PersonalAssistant",
+      operatingSystem: "Web",
+      url: "https://helloam.bot",
+      description:
+        "A personal AI companion who manages your life, knows your story, and grows with you. Soul-bonded to one person — you.",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/PreOrder",
+        description: "Join the waitlist for early access.",
+      },
+      publisher: {
+        "@id": "https://helloam.bot/#organization",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -71,6 +118,10 @@ export default function RootLayout({
         className="antialiased"
         style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
