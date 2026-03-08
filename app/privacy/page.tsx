@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | helloam.bot",
   description:
-    "Privacy policy for helloam.bot and AugmentedMike. We collect minimal data, never sell it, and are committed to protecting your personal information.",
+    "Privacy policy for helloam.bot and AM. We collect minimal data, never sell it, and are committed to protecting your personal information.",
   alternates: {
     canonical: "https://helloam.bot/privacy",
   },
@@ -14,7 +14,7 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Privacy Policy",
   url: "https://helloam.bot/privacy",
-  description: "Privacy policy for helloam.bot — the home of AugmentedMike, your personal AI companion.",
+  description: "Privacy policy for helloam.bot — the home of AM, your personal AI companion.",
   isPartOf: {
     "@id": "https://helloam.bot/#website",
   },
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
               Who we are
             </h2>
             <p>
-              helloam.bot is operated by Tylt LLC, a Delaware company. We build AugmentedMike — a
+              helloam.bot is operated by Tylt LLC, a Delaware company. We build AM — a
               personal AI companion designed to live on hardware you own, bonded to one person: you.
               Questions about this policy? Email us at{" "}
               <a href="mailto:hello@helloam.bot" className="text-white hover:underline">

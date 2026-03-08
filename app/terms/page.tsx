@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | helloam.bot",
   description:
-    "Terms of service for helloam.bot and the AugmentedMike waitlist. Simple, plain-language terms for a pre-launch AI companion product.",
+    "Terms of service for helloam.bot and the AM waitlist. Simple, plain-language terms for a pre-launch AI companion product.",
   alternates: {
     canonical: "https://helloam.bot/terms",
   },
@@ -71,7 +71,7 @@ export default function TermsPage() {
             </h2>
             <p>
               helloam.bot is a pre-launch website operated by Tylt LLC, a Delaware company. The site
-              introduces AugmentedMike (&quot;AM&quot;) — a personal AI companion product currently in development
+              introduces AM (&quot;AM&quot;) — a personal AI companion product currently in development
               — and collects early-access waitlist registrations. By using this site or joining the
               waitlist, you agree to these terms.
             </p>
@@ -109,7 +109,7 @@ export default function TermsPage() {
               <li>Use this site for any unlawful purpose or in violation of these terms.</li>
               <li>Attempt to gain unauthorized access to any part of the site or its infrastructure.</li>
               <li>Scrape, crawl, or harvest content or email addresses from this site using automated means beyond standard search engine indexing.</li>
-              <li>Impersonate Tylt LLC, AugmentedMike, or any other person or entity.</li>
+              <li>Impersonate Tylt LLC, AM, or any other person or entity.</li>
             </ul>
           </section>
 
@@ -121,7 +121,7 @@ export default function TermsPage() {
               Intellectual property
             </h2>
             <p>
-              All content on helloam.bot — including the AugmentedMike name, logo, copywriting,
+              All content on helloam.bot — including the AM name, logo, copywriting,
               imagery, and product descriptions — is owned by Tylt LLC or licensed to us and protected
               by copyright, trademark, and other laws. You may share links to this site and quote brief
               excerpts for commentary, but may not reproduce, redistribute, or create derivative works
