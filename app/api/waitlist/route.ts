@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
 import os from "os";
+import nodemailer from "nodemailer";
 
 const rateLimitMap = new Map<string, { count: number; windowStart: number }>();
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
@@ -39,6 +40,37 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+async function sendEmailNotification(entry: WaitlistEntry): Promise<void> {
+  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+  if (!gmailPass) return;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "augmentedmike@gmail.com",
+      pass: gmailPass,
+    },
+  });
+
+  await transporter.sendMail({
+    from: '"helloam.bot waitlist" <augmentedmike@gmail.com>',
+    to: "augmentedmike@gmail.com",
+    subject: `New waitlist signup: ${entry.name}`,
+    text: [
+      `New ${entry.type} signup on helloam.bot`,
+      `Name: ${entry.name}`,
+      `Email: ${entry.email}`,
+      `Type: ${entry.type}`,
+      entry.color ? `Color: ${entry.color}` : "",
+      `IP: ${entry.ip}`,
+      `Time: ${entry.joinedAt}`,
+      entry.number ? `Pre-order #${entry.number}` : "",
+    ].filter(Boolean).join("\n"),
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const ip = getClientIP(req);
@@ -64,20 +96,30 @@ export async function POST(req: NextRequest) {
     const waitlistDir = path.join(os.homedir(), "am", "user", "augmentedmike_bot");
     const waitlistPath = path.join(waitlistDir, "waitlist.json");
 
-    await fs.mkdir(waitlistDir, { recursive: true });
-
     let entries: WaitlistEntry[] = [];
+    let fsAvailable = false;
+
     try {
-      const raw = await fs.readFile(waitlistPath, "utf-8");
-      entries = JSON.parse(raw);
-      if (!Array.isArray(entries)) entries = [];
+      await fs.mkdir(waitlistDir, { recursive: true });
+      try {
+        const raw = await fs.readFile(waitlistPath, "utf-8");
+        entries = JSON.parse(raw);
+        if (!Array.isArray(entries)) entries = [];
+      } catch {
+        entries = [];
+      }
+      fsAvailable = true;
     } catch {
-      entries = [];
+      // Filesystem not available (e.g., Vercel serverless) — email fallback
+      fsAvailable = false;
     }
 
-    const duplicate = entries.find((e) => e.email.toLowerCase() === cleanEmail);
-    if (duplicate) {
-      return NextResponse.json({ error: "This email is already registered." }, { status: 409 });
+    // Check for duplicate if fs available
+    if (fsAvailable) {
+      const duplicate = entries.find((e) => e.email.toLowerCase() === cleanEmail);
+      if (duplicate) {
+        return NextResponse.json({ error: "This email is already registered." }, { status: 409 });
+      }
     }
 
     // Assign pre-order number
@@ -93,9 +135,16 @@ export async function POST(req: NextRequest) {
       ip,
       joinedAt: new Date().toISOString(),
     };
-    entries.push(newEntry);
 
-    await fs.writeFile(waitlistPath, JSON.stringify(entries, null, 2), "utf-8");
+    if (fsAvailable) {
+      entries.push(newEntry);
+      await fs.writeFile(waitlistPath, JSON.stringify(entries, null, 2), "utf-8");
+    }
+
+    // Always send email notification (fire and forget)
+    sendEmailNotification(newEntry).catch((err) =>
+      console.error("[waitlist] Email notification failed:", err)
+    );
 
     return NextResponse.json({
       success: true,
