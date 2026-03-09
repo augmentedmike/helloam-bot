@@ -41,7 +41,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 | | |
 |---|---|
-| 🦞 **MiniClaw** | [miniclaw.bot](https://miniclaw.bot) — Your own AI. Your Mac. Your data. |
+| 🦞 **MiniClaw** | [miniclaw.bot](https://miniclaw.bot) — The technology behind AM and a popular OpenClaw plugin ecosystem |
 | 👋 **Amelia** | [helloam.bot](https://helloam.bot) — Your personal AI companion |
 | 👨‍💻 **Michael ONeal** | [augmentedmike.com](https://augmentedmike.com) — The engineer behind it all |
 | 📖 **AM Blog** | [blog.augmentedmike.com](https://blog.augmentedmike.com) — Comic strip dev log |
