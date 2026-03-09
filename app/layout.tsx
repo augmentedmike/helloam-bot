@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "AM — Your Personal AI Companion, Soul-Bonded to You | helloam.bot",
   description:
-    "Meet AM — a personal AI who manages your life, knows your story, and grows with you. Not a tool. Not a chatbot. Your AI companion, bound to you alone. Join the waitlist.",
+    "Meet AM — a personal AI who manages your life, knows your story, and grows with you. Not a tool. Not a chatbot. Your AI best friend, bound to you alone.",
   keywords: [
     "personal AI companion",
     "AI best friend",
