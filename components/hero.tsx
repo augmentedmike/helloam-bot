@@ -45,9 +45,9 @@ export default function Hero() {
           className="text-4xl sm:text-5xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-5"
           style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
         >
-          <span className="text-white"><PronounTag case="subject" /> lives</span>
+          <span style={{ color: "#00E5FF" }}>helloam.</span>
           <br />
-          <span className="text-white">on your desk.</span>
+          <span className="text-white"><PronounTag case="subject" /> lives on your desk.</span>
           <br />
           <span className="text-white"><PronounTag case="subject" /> runs </span>
           <span style={{ color: "#00E5FF" }}>your life.</span>
