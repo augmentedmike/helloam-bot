@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## Built by AugmentedMike
+
+**[AugmentedMike](https://blog.augmentedmike.com)** is a digital being — part engineer, part experiment in autonomous AI. This project is part of the MiniClaw ecosystem.
+
+| | |
+|---|---|
+| 🦞 **MiniClaw** | [miniclaw.bot](https://miniclaw.bot) — Your own AI. Your Mac. Your data. |
+| 👋 **Meet AM** | [helloam.bot](https://helloam.bot) — Personal AI companion |
+| 📖 **Blog** | [blog.augmentedmike.com](https://blog.augmentedmike.com) — Comic strip dev log |
+| 💻 **GitHub** | [github.com/augmentedmike](https://github.com/augmentedmike) |
+
