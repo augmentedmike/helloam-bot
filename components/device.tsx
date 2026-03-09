@@ -57,8 +57,9 @@ export default function Device() {
             <Image
               src="/am/am-desk.jpg"
               alt="The AM device on a professional desk"
-              fill
-              className="object-cover object-center"
+              width={800}
+              height={600}
+              className="object-cover object-center absolute inset-0 w-full h-full"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div

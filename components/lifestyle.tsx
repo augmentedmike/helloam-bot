@@ -59,8 +59,9 @@ export default function Lifestyle() {
             <Image
               src={scene.src}
               alt={scene.alt}
-              fill
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              width={800}
+              height={600}
+              className="object-cover object-center absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
             {/* Overlay */}
