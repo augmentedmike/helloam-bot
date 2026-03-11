@@ -361,7 +361,7 @@ export default function Device() {
               {[
                 { label: "AM Device", sub: "Mac Mini M1 8GB · skin · setup · shipping", price: mode === "rack" ? `$${RACK_PRICE.toLocaleString()}/unit` : `$${SINGLE_PRICE.toLocaleString()}`, bright: false },
                 { label: "AM Software", sub: "Free and open source, always", price: "Free", bright: true },
-                { label: "Anthropic Compute", sub: `Your AI fuel — ${cap(pronouns.subject)} pays Anthropic directly`, price: "~$200/mo", bright: false },
+                { label: "Anthropic Compute", sub: `Your AI fuel — ${cap(pronouns.subject)} pays Anthropic directly`, price: "$20–$200/mo", bright: false },
                 { label: "Support", sub: "Email always free · Live sessions $100/30 min", price: "As needed", bright: false },
               ].map((row) => (
                 <div key={row.label} className="flex items-start justify-between gap-4">
