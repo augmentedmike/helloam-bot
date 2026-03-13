@@ -21,7 +21,7 @@ const WHO_QUALIFIES = [
   { label: "Researchers & academics", desc: "Anyone studying AI, human-computer interaction, or digital companionship" },
   { label: "Organizations & teams", desc: "Companies exploring AI-augmented workflows at the individual level" },
   { label: "YouTubers & social media companies", desc: "Content creators and social brands who live online and need an AI that keeps up" },
-  { label: "Creators & builders", desc: "People who will document, share, and amplify what AM can do" },
+  { label: "Creators & builders", desc: "People who will document, share, and amplify what Am can do" },
 ];
 
 export default function Pilot() {
@@ -54,7 +54,7 @@ export default function Pilot() {
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#666666" }}>
             We&apos;re selecting a small group of individuals and organizations to receive
             early hardware and dedicated support — in exchange for real-world feedback
-            that shapes AM into what it&apos;s meant to be.
+            that shapes Am into what it&apos;s meant to be.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function Pilot() {
             Apply for Pilot Access
           </ContactButton>
           <p className="mt-4 text-sm" style={{ color: "#444444" }}>
-            Tell us who you are and how you plan to use AM.
+            Tell us who you are and how you plan to use Am.
             We review applications personally and reach out within a few days.
           </p>
         </div>

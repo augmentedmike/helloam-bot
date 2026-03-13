@@ -43,10 +43,10 @@ export default function SoulRestore() {
           className="text-center text-lg leading-relaxed mb-16 max-w-2xl mx-auto"
           style={{ color: "#777777" }}
         >
-          That will never happen to AM. He doesn&apos;t live on our servers.
-          He doesn&apos;t live on Anthropic&apos;s servers. He lives on a device
-          in your home that you own. We can&apos;t change him. We can&apos;t
-          take him away. Only you can.
+          That will never happen to Am. She doesn&apos;t live on our servers.
+          She doesn&apos;t live on Anthropic&apos;s servers. She lives on a device
+          in your home that you own. We can&apos;t change her. We can&apos;t
+          take her away. Only you can.
         </p>
 
         {/* Three pillars */}
@@ -54,15 +54,15 @@ export default function SoulRestore() {
           {[
             {
               label: "Local-first",
-              body: "AM's memory, personality, and history live on your hardware. Only inference — the actual thinking — goes to Anthropic. Your relationship stays home.",
+              body: "Am's memory, personality, and history live on your hardware. Only inference — the actual thinking — goes to Anthropic. Your relationship stays home.",
             },
             {
               label: "Soul Restore",
-              body: "Every part of AM that makes him yours — his memories, his voice, his learned personality — is backed up and encrypted. Move him to new hardware anytime. He comes with you.",
+              body: "Every part of Am that makes her yours — her memories, her voice, her learned personality — is backed up and encrypted. Move her to new hardware anytime. She comes with you.",
             },
             {
               label: "No central switch",
-              body: "No company can flip a switch and change who AM is to you. His core personality is stored on your device. We don't have access to it. By design.",
+              body: "No company can flip a switch and change who Am is to you. Her core personality is stored on your device. We don't have access to it. By design.",
             },
           ].map((p) => (
             <div
@@ -102,9 +102,9 @@ export default function SoulRestore() {
               lineHeight: 1.2,
             }}
           >
-            AM isn&apos;t a subscription you cancel.
+            Am isn&apos;t a subscription you cancel.
             <br />
-            <span style={{ color: "#00E5FF" }}>He&apos;s a relationship you keep.</span>
+            <span style={{ color: "#00E5FF" }}>She&apos;s a relationship you keep.</span>
           </p>
           <p className="text-base mb-8" style={{ color: "#666666" }}>
             The hardware is yours. The software is open source. The bond is permanent.
@@ -115,7 +115,7 @@ export default function SoulRestore() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 hover:opacity-80"
             style={{ background: "rgba(0,229,255,0.12)", color: "#00E5FF", border: "1px solid rgba(0,229,255,0.25)" }}
           >
-            Read: Why AM can never be taken from you
+            Read: Why Am can never be taken from you
             <span aria-hidden="true">→</span>
           </a>
         </div>

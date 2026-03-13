@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const SESSION_PRICE_CENTS = 7500; // $75
+const SESSION_PRICE_CENTS = Number(process.env.SESSION_PRICE_CENTS) || 7500;
 
 export async function POST(req: NextRequest) {
   try {

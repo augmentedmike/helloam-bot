@@ -7,9 +7,9 @@ import { NameTag } from "@/components/ui/name-tag";
 import { usePersonalization } from "@/context/personalization-context";
 
 const HERO_IMAGES = [
-  { src: "/am/am-student.webp", alt: "AM in your dorm — never lets you fall behind",                 scene: "Dorm"   },
-  { src: "/am/am-desk.webp",    alt: "AM at your desk — running while you work",                     scene: "Office" },
-  { src: "/am/am-room.webp",    alt: "AM in your home — always on, always watching over things",     scene: "Home"   },
+  { src: "/am/am-student.webp", alt: "Am in your dorm — never lets you fall behind",                 scene: "Dorm"   },
+  { src: "/am/am-desk.webp",    alt: "Am at your desk — running while you work",                     scene: "Office" },
+  { src: "/am/am-room.webp",    alt: "Am in your home — always on, always watching over things",     scene: "Home"   },
 ];
 
 export default function Hero() {
@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="absolute inset-0 lg:hidden">
         <Image
           src="/am/am-student.webp"
-          alt="AM in your dorm — never lets you fall behind"
+          alt="Am in your dorm — never lets you fall behind"
           fill
           priority
           className="object-cover"
@@ -62,7 +62,7 @@ export default function Hero() {
           style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
         >
           <span className="text-lg sm:text-xl xl:text-2xl block mb-4" style={{ color: "#00E5FF" }}>Meet <NameTag />.</span>
-          <span className="text-white">An AGI that runs </span><span style={{ color: "#00E5FF" }}>locally</span><span className="text-white">, not in the cloud.</span>
+          <span className="text-white">Your Personal AI Companion — runs </span><span style={{ color: "#00E5FF" }}>locally</span><span className="text-white">, not in the cloud.</span>
         </h1>
 
         <p className="text-base leading-relaxed max-w-lg mb-8" style={{ color: "#aaaaaa" }}>

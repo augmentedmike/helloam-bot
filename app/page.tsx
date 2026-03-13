@@ -7,6 +7,7 @@ import Plans from "@/components/plans";
 import Manifesto from "@/components/manifesto";
 import Waitlist from "@/components/waitlist";
 import FAQ from "@/components/faq";
+import Comparisons from "@/components/comparisons";
 import Pilot from "@/components/pilot";
 import { ColorProvider } from "@/context/color-context";
 
@@ -25,6 +26,7 @@ export default function Home() {
       </ColorProvider>
       <Pilot />
       <FAQ />
+      <Comparisons />
     </main>
   );
 }

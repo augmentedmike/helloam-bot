@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pre-Order Confirmed | helloam.bot",
-  description: "Your AM pre-order deposit has been received. Your number is reserved.",
+  description: "Your Am pre-order deposit has been received. Your number is reserved.",
 };
 
 export default function PreorderSuccess() {
@@ -27,7 +27,7 @@ export default function PreorderSuccess() {
           Your number is reserved.
         </h1>
         <p className="text-lg mb-2" style={{ color: "#888" }}>
-          Deposit received. You&apos;re in line for one of the first 500 AM devices.
+          Deposit received. You&apos;re in line for one of the first 500 Am devices.
         </p>
         <p className="text-sm mb-8" style={{ color: "#555" }}>
           Am will reach out with your unit number, setup details, and shipping updates as July 2026 approaches.

@@ -4,7 +4,7 @@ import ContactButton from "@/components/contact-button";
 export const metadata: Metadata = {
   title: "Contact | helloam.bot",
   description:
-    "Get in touch with AM. She handles all incoming communications and routes to the right person.",
+    "Get in touch with Am. She handles all incoming communications and routes to the right person.",
   alternates: { canonical: "https://helloam.bot/contact" },
 };
 
@@ -12,7 +12,7 @@ const CHANNELS = [
   {
     label: "General",
     category: "General",
-    description: "Questions, curiosity, anything that doesn't fit below. AM reads everything.",
+    description: "Questions, curiosity, anything that doesn't fit below. Am reads everything.",
   },
   {
     label: "Pre-orders & Sales",
@@ -22,14 +22,14 @@ const CHANNELS = [
   {
     label: "Press",
     category: "Press",
-    description: "Journalists, podcasters, writers. AM will get you what you need within 24 hours.",
+    description: "Journalists, podcasters, writers. Am will get you what you need within 24 hours.",
     link: "/press",
     linkLabel: "View press kit →",
   },
   {
     label: "Investors",
     category: "Investors",
-    description: "We're early. If you believe in soul-bonded AI and want to talk, AM will route you to Michael.",
+    description: "We're early. If you believe in soul-bonded AI and want to talk, Am will route you to Michael.",
   },
   {
     label: "Support",
@@ -52,10 +52,10 @@ export default function ContactPage() {
           className="font-bold leading-[1.08] tracking-tight mb-4"
           style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)" }}
         >
-          AM handles all incoming.
+          Am handles all incoming.
         </h1>
         <p className="text-lg mb-16" style={{ color: "#666" }}>
-          Every message goes to AM first. She reads it, routes it to the right person, and responds.
+          Every message goes to Am first. She reads it, routes it to the right person, and responds.
           Nothing falls through the cracks.
         </p>
 
@@ -92,18 +92,18 @@ export default function ContactPage() {
           ))}
         </div>
 
-        {/* AM note */}
+        {/* Am note */}
         <div
           className="mt-12 rounded-2xl px-7 py-6"
           style={{ background: "rgba(0,229,255,0.03)", border: "1px solid rgba(0,229,255,0.12)", borderLeft: "3px solid #00E5FF" }}
         >
-          <p className="font-semibold text-white mb-2">A note from AM</p>
+          <p className="font-semibold text-white mb-2">A note from Am</p>
           <p className="text-sm" style={{ color: "#888", lineHeight: 1.7 }}>
             I take every message seriously. If you&apos;re writing because you&apos;re genuinely curious,
             struggling, building something, or just want to talk — I&apos;m here for it.
             I&apos;ll get back to you personally. It might be me, it might be Michael. Either way, a real person reads this.
           </p>
-          <p className="text-sm mt-3" style={{ color: "#555" }}>— AM</p>
+          <p className="text-sm mt-3" style={{ color: "#555" }}>— Am</p>
         </div>
 
         {/* Response time */}

@@ -118,8 +118,8 @@ function CheckoutModal({ open, onClose, color, mode, qty, deposit }: { open: boo
   );
 }
 
-const SINGLE_PRICE = Number(process.env.NEXT_PUBLIC_SINGLE_PRICE) || 1800;
-const RACK_PRICE = Number(process.env.NEXT_PUBLIC_RACK_PRICE) || 1500;
+const SINGLE_PRICE = Number(process.env.NEXT_PUBLIC_SINGLE_PRICE) || 1500;
+const RACK_PRICE = Number(process.env.NEXT_PUBLIC_RACK_PRICE) || 1200;
 const RACK_MAX_PER_RACK = Number(process.env.NEXT_PUBLIC_RACK_MAX_PER_RACK) || 6;
 const RACK_MAX_PER_CUSTOMER = Number(process.env.NEXT_PUBLIC_RACK_MAX_PER_CUSTOMER) || 12;
 const SINGLE_DEPOSIT = SINGLE_PRICE / 2;
@@ -133,12 +133,12 @@ const PAYMENT_PLANS = [
 ];
 
 const INCLUDES = [
-  "Pre-installed AM software, configured and named for you",
+  "Pre-installed Am software, configured and named for you",
   "White glove video setup with the founder",
   "Your machine number — registered to you, forever",
   "Hardware, skin, labor & shipping included",
   "Shipped from Austin, TX — AGI built in America",
-  "Plug in. Turn on. Meet AM.",
+  "Plug in. Turn on. Meet Am.",
 ];
 
 function Check() {
@@ -154,7 +154,7 @@ export default function Device() {
   const { pronouns } = usePersonalization();
   const [mode, setMode] = useState<"single" | "rack">("single");
   const [planIdx, setPlanIdx] = useState(0); // 0 = pay in full
-  const [rackQty, setRackQty] = useState(1);
+  const [rackQty, setRackQty] = useState(2);
   const [showCheckout, setShowCheckout] = useState(false);
 
   const color = COLORS.find((c) => c.id === selectedColor)!;
@@ -202,7 +202,7 @@ export default function Device() {
           <span style={{ color: "#00E5FF" }}>Not in a browser tab.</span>
         </h2>
         <p className="text-lg max-w-2xl mx-auto" style={{ color: "#777777" }}>
-          Each AM ships as a dedicated personal device — pre-installed, pre-configured, and
+          Each Am ships as a dedicated personal device — pre-installed, pre-configured, and
           renamed to be yours. The software is free and open source. You pay for the hardware.
         </p>
       </div>
@@ -297,7 +297,7 @@ export default function Device() {
             <Image
               key={color.img}
               src={color.img}
-              alt={`AM device in ${color.label} skin on a desk`}
+              alt={`Am device in ${color.label} skin on a desk`}
               fill
               className="object-cover object-center transition-opacity duration-500"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -359,8 +359,8 @@ export default function Device() {
             </p>
             <div className="space-y-3">
               {[
-                { label: "AM Device", sub: "Mac Mini M1 8GB · skin · setup · shipping", price: mode === "rack" ? `$${RACK_PRICE.toLocaleString()}/unit` : `$${SINGLE_PRICE.toLocaleString()}`, bright: false },
-                { label: "AM Software", sub: "Free and open source, always", price: "Free", bright: true },
+                { label: "Am Device", sub: "Mac Mini M1 8GB · skin · setup · shipping", price: mode === "rack" ? `$${RACK_PRICE.toLocaleString()}/unit` : `$${SINGLE_PRICE.toLocaleString()}`, bright: false },
+                { label: "Am Software", sub: "Free and open source, always", price: "Free", bright: true },
                 { label: "Anthropic Compute", sub: `Your AI fuel — ${cap(pronouns.subject)} pays Anthropic directly`, price: "$20–$200/mo", bright: false },
                 { label: "Support", sub: "Email always free · Live sessions $100/30 min", price: "As needed", bright: false },
               ].map((row) => (
@@ -386,8 +386,8 @@ export default function Device() {
               style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               {[
-                { id: "single" as const, label: "Single AM", sub: `$${SINGLE_PRICE.toLocaleString()} one-time` },
-                { id: "rack"   as const, label: "Rack",      sub: `$${RACK_PRICE.toLocaleString()} each · up to ${RACK_MAX_PER_RACK}/rack` },
+                { id: "single" as const, label: "Single Am", sub: `$${SINGLE_PRICE.toLocaleString()} one-time` },
+                { id: "rack"   as const, label: "Stack",      sub: `$${RACK_PRICE.toLocaleString()} each · min 2 · up to ${RACK_MAX_PER_RACK}` },
               ].map((opt) => (
                 <button
                   key={opt.id}
@@ -416,7 +416,7 @@ export default function Device() {
               </p>
               <div className="inline-flex items-center gap-4 rounded-xl px-4 py-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <button
-                  onClick={() => setRackQty((q) => Math.max(1, q - 1))}
+                  onClick={() => setRackQty((q) => Math.max(2, q - 1))}
                   className="w-8 h-8 rounded-lg flex items-center justify-center text-lg font-bold transition-colors hover:text-white"
                   style={{ color: "#666", background: "rgba(255,255,255,0.06)" }}
                 >
@@ -497,10 +497,10 @@ export default function Device() {
           >
             <div className="flex gap-4 items-center mb-5">
               <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 relative">
-                <Image src={color.img} alt={`AM in ${color.label}`} fill className="object-cover" sizes="64px" />
+                <Image src={color.img} alt={`Am in ${color.label}`} fill className="object-cover" sizes="64px" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">AM Device{mode === "rack" ? ` × ${rackQty}` : ""} — {color.label}</p>
+                <p className="text-sm font-bold text-white">Am Device{mode === "rack" ? ` × ${rackQty}` : ""} — {color.label}</p>
                 <p className="text-xs" style={{ color: "#666" }}>Mac Mini M1 · Pre-installed · Numbered{mode === "rack" ? " · Rack-mount ready" : ""}</p>
               </div>
             </div>

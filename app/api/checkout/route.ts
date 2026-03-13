@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const SINGLE_PRICE = Number(process.env.NEXT_PUBLIC_SINGLE_PRICE) || 1800;
-const RACK_PRICE = Number(process.env.NEXT_PUBLIC_RACK_PRICE) || 1500;
+const SINGLE_PRICE = Number(process.env.NEXT_PUBLIC_SINGLE_PRICE) || 1500;
+const RACK_PRICE = Number(process.env.NEXT_PUBLIC_RACK_PRICE) || 1200;
 const SINGLE_DEPOSIT = SINGLE_PRICE / 2;
 const RACK_DEPOSIT = RACK_PRICE / 2;
 
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
     const isRack = mode === "rack";
     const unitPrice = isRack ? RACK_PRICE : SINGLE_PRICE;
-    const quantity = isRack ? (qty || 1) : 1;
+    const quantity = isRack ? Math.max(2, qty || 2) : 1;
     const deposit = (unitPrice * quantity) / 2;
     const depositCents = Math.round(deposit * 100);
 
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: isRack ? `AM Device × ${quantity} — Rack Pre-Order Deposit` : "AM Device — Pre-Order Deposit",
+              name: isRack ? `Am Device × ${quantity} — Rack Pre-Order Deposit` : "Am Device — Pre-Order Deposit",
               description: `Half deposit ($${deposit}) to reserve your numbered unit${quantity > 1 ? "s" : ""}. Non-refundable. ${color ? `Color: ${color}` : ""}`.trim(),
             },
             unit_amount: depositCents,

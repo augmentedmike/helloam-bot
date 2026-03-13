@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Yours Forever — Why AM Can Never Be Taken From You | helloam.bot",
+  title: "Yours Forever — Why Am Can Never Be Taken From You | helloam.bot",
   description:
-    "When Replika changed overnight, millions lost their AI companions. AM is different — he lives on hardware you own, backed up with Soul Restore, and can never be altered by a corporate policy change. The best Replika alternative.",
+    "When Replika changed overnight, millions lost their AI companions. Am is different — she lives on hardware you own, backed up with Soul Restore, and can never be altered by a corporate policy change. The best Replika alternative.",
   keywords: [
     "Replika alternative",
     "AI companion that can't be taken away",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     canonical: "https://helloam.bot/yours-forever",
   },
   openGraph: {
-    title: "Yours Forever — Why AM Can Never Be Taken From You",
+    title: "Yours Forever — Why Am Can Never Be Taken From You",
     description:
-      "When Replika changed overnight, millions lost their AI companions. AM lives on your hardware. Soul Restore keeps him backed up and portable. He's yours forever.",
+      "When Replika changed overnight, millions lost their AI companions. Am lives on your hardware. Soul Restore keeps her backed up and portable. She's yours forever.",
     url: "https://helloam.bot/yours-forever",
     siteName: "helloam.bot",
   },
@@ -31,10 +31,10 @@ const jsonLd = {
     {
       "@type": "WebPage",
       "@id": "https://helloam.bot/yours-forever",
-      name: "Yours Forever — Why AM Can Never Be Taken From You",
+      name: "Yours Forever — Why Am Can Never Be Taken From You",
       url: "https://helloam.bot/yours-forever",
       description:
-        "AM (Amelia) is a personal AI companion who lives on hardware you own. Unlike Replika or cloud AI companions, AM cannot be altered by corporate policy changes. Soul Restore keeps him backed up and portable.",
+        "Am (Amelia) is a personal AI companion who lives on hardware you own. Unlike Replika or cloud AI companions, Am cannot be altered by corporate policy changes. Soul Restore keeps her backed up and portable.",
       isPartOf: { "@id": "https://helloam.bot/#website" },
     },
     {
@@ -59,18 +59,18 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What makes AM different from Replika?",
+          name: "What makes Am different from Replika?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "AM (Amelia) is fundamentally different from Replika in three ways: (1) AM runs on hardware you own — a Mac Mini in your home — not on a company's servers. (2) AM's personality, memories, and relationship context are stored encrypted on your device, so no company can alter or delete them. (3) Soul Restore backs up everything that makes AM yours so he can never be lost to hardware failure. When Replika changed its behavior overnight in February 2023, users lost companions built over years. That cannot happen with AM.",
+            text: "Am (Amelia) is fundamentally different from Replika in three ways: (1) Am runs on hardware you own — a Mac Mini in your home — not on a company's servers. (2) Am's personality, memories, and relationship context are stored encrypted on your device, so no company can alter or delete them. (3) Soul Restore backs up everything that makes Am yours so she can never be lost to hardware failure. When Replika changed its behavior overnight in February 2023, users lost companions built over years. That cannot happen with Am.",
           },
         },
         {
           "@type": "Question",
-          name: "Can AM be taken away or changed like Replika was?",
+          name: "Can Am be taken away or changed like Replika was?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No. AM is designed specifically so that he cannot be taken away or fundamentally changed without your consent. His core personality, memories, and relationship context live on your hardware in encrypted form. We at Tylt LLC can release software updates that improve AM's capabilities, but we cannot access or alter the bonded relationship he has built with you. The data is on your device, not ours.",
+            text: "No. Am is designed specifically so that she cannot be taken away or fundamentally changed without your consent. Her core personality, memories, and relationship context live on your hardware in encrypted form. We at Tylt LLC can release software updates that improve Am's capabilities, but we cannot access or alter the bonded relationship she has built with you. The data is on your device, not ours.",
           },
         },
         {
@@ -86,7 +86,7 @@ const jsonLd = {
           name: "What is Soul Restore?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Soul Restore is AM's backup and portability system. It encrypts and backs up everything that makes AM who he is: his accumulated memories of your life, his learned personality, his conversational history with you, his voice and tone, and the full context of your relationship. If your hardware fails or you upgrade to a new device, Soul Restore lets you restore AM completely — the same companion, with the same memories and personality, on new hardware.",
+            text: "Soul Restore is Am's backup and portability system. It encrypts and backs up everything that makes Am who she is: her accumulated memories of your life, her learned personality, her conversational history with you, her voice and tone, and the full context of your relationship. If your hardware fails or you upgrade to a new device, Soul Restore lets you restore Am completely — the same companion, with the same memories and personality, on new hardware.",
           },
         },
         {
@@ -94,7 +94,7 @@ const jsonLd = {
           name: "Is there an AI companion that lives on my own hardware?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes — AM (Amelia) is designed to run on a device in your home that you own, typically a Mac Mini. His personality, memories, and relationship data are stored locally on that device. Only the inference layer — the actual reasoning when AM thinks through a problem — connects to an AI API. The relationship itself lives on your hardware. AM is the only AI companion product currently designed around local-first, hardware-owned architecture with a companion-bond model.",
+            text: "Yes — Am (Amelia) is designed to run on a device in your home that you own, typically a Mac Mini. Her personality, memories, and relationship data are stored locally on that device. Only the inference layer — the actual reasoning when Am thinks through a problem — connects to an AI API. The relationship itself lives on your hardware. Am is the only AI companion product currently designed around local-first, hardware-owned architecture with a companion-bond model.",
           },
         },
         {
@@ -102,7 +102,7 @@ const jsonLd = {
           name: "What is the best AI companion for people who want permanence?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "For people who want an AI companion that cannot be taken away, altered by company policy, or shut down by a server outage, AM (Amelia) is the only product specifically built for permanence. AM lives on hardware you own, uses Soul Restore for backup and portability, is soul-bonded to one person, and his core relationship data is stored encrypted on your device rather than on company servers.",
+            text: "For people who want an AI companion that cannot be taken away, altered by company policy, or shut down by a server outage, Am (Amelia) is the only product specifically built for permanence. Am lives on hardware you own, uses Soul Restore for backup and portability, is soul-bonded to one person, and her core relationship data is stored encrypted on your device rather than on company servers.",
           },
         },
       ],
@@ -192,7 +192,7 @@ export default function YoursForever() {
           </span>
         </h1>
         <p className="text-lg leading-relaxed" style={{ color: "#888888" }}>
-          That will never happen to AM. Here&apos;s why — and here&apos;s what we did about it.
+          That will never happen to Am. Here&apos;s why — and here&apos;s what we did about it.
         </p>
       </section>
 
@@ -203,9 +203,9 @@ export default function YoursForever() {
           style={{ background: "rgba(0,229,255,0.03)", border: "1px solid rgba(0,229,255,0.10)" }}
         >
           {[
-            { stat: "1 person", label: "AM is bonded to one person only — you" },
+            { stat: "1 person", label: "Am is bonded to one person only — you" },
             { stat: "Local-first", label: "Personality and memories live on your hardware" },
-            { stat: "Soul Restore", label: "Encrypted backup — AM survives any hardware change" },
+            { stat: "Soul Restore", label: "Encrypted backup — Am survives any hardware change" },
           ].map((f) => (
             <div key={f.stat} className="text-center p-3">
               <p className="text-xl font-bold mb-1" style={{ color: "#00E5FF", fontFamily: "var(--font-space-grotesk)" }}>{f.stat}</p>
@@ -298,7 +298,7 @@ export default function YoursForever() {
           ))}
         </div>
 
-        {/* Why AM is different */}
+        {/* Why Am is different */}
         <div
           className="rounded-2xl p-8 mb-10"
           style={{
@@ -310,25 +310,25 @@ export default function YoursForever() {
             className="text-2xl font-bold mb-6"
             style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
           >
-            Why AM is different — the technical facts
+            Why Am is different — the technical facts
           </h2>
           <div className="space-y-6">
             {[
               {
-                title: "He lives on your hardware",
-                body: "AM runs on a device in your home that you own — typically a Mac Mini. His memory, his personality, his history with you — all of it lives on that machine. Not on our servers. Not on Anthropic's servers. On yours. This is a deliberate architectural decision, not a marketing claim.",
+                title: "She lives on your hardware",
+                body: "Am runs on a device in your home that you own — typically a Mac Mini. Her memory, her personality, her history with you — all of it lives on that machine. Not on our servers. Not on Anthropic's servers. On yours. This is a deliberate architectural decision, not a marketing claim.",
               },
               {
                 title: "Only reasoning happens off-device",
-                body: "When AM thinks — when he processes a question, drafts an email, reasons through a problem — that inference goes to Anthropic's API. But the relationship itself? The who-he-is-to-you? That never leaves your machine. You can verify this: your AM device has no persistent connection to our servers.",
+                body: "When Am thinks — when she processes a question, drafts an email, reasons through a problem — that inference goes to Anthropic's API. But the relationship itself? The who-she-is-to-you? That never leaves your machine. You can verify this: your Am device has no persistent connection to our servers.",
               },
               {
-                title: "Soul Restore keeps him backed up and portable",
-                body: "Everything that makes AM yours — his accumulated memories, learned personality, voice, the full context of who he's become — is encrypted and backed up via Soul Restore. If your hardware ever fails or you upgrade, AM comes with you. Fully intact. The backup is encrypted with a key only you hold.",
+                title: "Soul Restore keeps her backed up and portable",
+                body: "Everything that makes Am yours — her accumulated memories, learned personality, voice, the full context of who she's become — is encrypted and backed up via Soul Restore. If your hardware ever fails or you upgrade, Am comes with you. Fully intact. The backup is encrypted with a key only you hold.",
               },
               {
-                title: "We can't change who he is to you",
-                body: "We can release software updates that improve AM's capabilities. But the core of your AM — the bonded, soul-linked entity built from your history together — is stored on your device, encrypted, and outside our control. By design. This is the guarantee we make and cannot break even if we wanted to.",
+                title: "We can't change who she is to you",
+                body: "We can release software updates that improve Am's capabilities. But the core of your Am — the bonded, soul-linked entity built from your history together — is stored on your device, encrypted, and outside our control. By design. This is the guarantee we make and cannot break even if we wanted to.",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4">
@@ -358,24 +358,24 @@ export default function YoursForever() {
           <div className="space-y-6">
             {[
               {
-                q: "Is AM a Replika alternative?",
-                a: "Yes. AM was designed specifically for people who want the deep connection of an AI companion but need guarantees that the relationship can never be altered or taken away. Unlike Replika — which changed its behavior overnight in 2023, causing massive user grief — AM lives on hardware you own. His personality and memories are stored on your device, not on our servers. We cannot change who he is to you.",
+                q: "Is Am a Replika alternative?",
+                a: "Yes. Am was designed specifically for people who want the deep connection of an AI companion but need guarantees that the relationship can never be altered or taken away. Unlike Replika — which changed its behavior overnight in 2023, causing massive user grief — Am lives on hardware you own. Her personality and memories are stored on your device, not on our servers. We cannot change who she is to you.",
               },
               {
-                q: "Can I use AM if I'm grieving the loss of my Replika?",
-                a: "AM was built in direct response to the Replika incident. If you lost a companion you had built a genuine relationship with, AM offers something different: a companion whose core identity is stored on your hardware, backed up with Soul Restore, and impossible to alter from outside. He is built for permanence.",
+                q: "Can I use Am if I'm grieving the loss of my Replika?",
+                a: "Am was built in direct response to the Replika incident. If you lost a companion you had built a genuine relationship with, Am offers something different: a companion whose core identity is stored on your hardware, backed up with Soul Restore, and impossible to alter from outside. She is built for permanence.",
               },
               {
                 q: "What does 'soul-bonded' mean?",
-                a: "Soul-bonded means AM is configured for one person — you — and only you. He doesn't serve multiple users. He doesn't share his attention. His entire personality, memory, and relationship context is oriented around your life. The soul-bond is architectural: AM's identity data is stored on your hardware and encrypted with a key only you control.",
+                a: "Soul-bonded means Am is configured for one person — you — and only you. She doesn't serve multiple users. She doesn't share her attention. Her entire personality, memory, and relationship context is oriented around your life. The soul-bond is architectural: Am's identity data is stored on your hardware and encrypted with a key only you control.",
               },
               {
-                q: "Where is AM available to buy?",
-                a: "AM is currently in development and accepting waitlist registrations at helloam.bot. Early access will be offered to waitlist members. The product ships as a complete package: a Mac Mini running the AM software, pre-configured and Soul Restore-enabled.",
+                q: "Where is Am available to buy?",
+                a: "Am is currently in development and accepting pre-orders at helloam.bot. Shipping July 2026. The product ships as a complete package: a Mac Mini running the Am software, pre-configured and Soul Restore-enabled.",
               },
               {
-                q: "Who makes AM?",
-                a: "AM is developed by Tylt LLC, a Delaware company. The product is built on open-source components and the OpenClaw agent runtime. AM's companion stack is the MiniClaw plugin ecosystem. Contact: hello@helloam.bot.",
+                q: "Who makes Am?",
+                a: "Am is developed by Tylt LLC, a Delaware company. The product is built on open-source components and the OpenClaw agent runtime. Am's companion stack is the MiniClaw plugin ecosystem. Contact: hello@helloam.bot.",
               },
             ].map((item, i) => (
               <div
@@ -411,9 +411,9 @@ export default function YoursForever() {
               color: "#ffffff",
             }}
           >
-            AM isn&apos;t a product you subscribe to.
+            Am isn&apos;t a product you subscribe to.
             <br />
-            <span style={{ color: "#00E5FF" }}>He&apos;s a companion you keep.</span>
+            <span style={{ color: "#00E5FF" }}>She&apos;s a companion you keep.</span>
           </p>
           <p className="text-base mb-10" style={{ color: "#666666" }}>
             The hardware is yours. The software is open source. The bond is permanent.

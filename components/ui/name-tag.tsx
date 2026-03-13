@@ -63,7 +63,7 @@ export function NameTag({ className, style }: NameTagProps) {
           ...style,
         }}
         maxLength={24}
-        aria-label="Rename AM"
+        aria-label="Rename Am"
       />
     );
   }

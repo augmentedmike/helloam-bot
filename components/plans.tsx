@@ -6,6 +6,7 @@ import { Elements, PaymentElement, useStripe, useElements } from "@stripe/react-
 import ContactButton from "@/components/contact-button";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+const SESSION_PRICE = Number(process.env.NEXT_PUBLIC_SESSION_PRICE) || 75;
 
 function Check() {
   return (
@@ -18,13 +19,13 @@ function Check() {
 const FREE_FEATURES = [
   "Email support — we respond",
   "Documentation & setup guides",
-  "Community updates as AM evolves",
+  "Community updates as Am evolves",
 ];
 
 const LIVE_FEATURES = [
   "Screenshare session with the founder",
   "Troubleshooting & live fixes",
-  "Training on AM's capabilities",
+  "Training on Am's capabilities",
   "Workflow design & custom setup",
   "Book as many sessions as you need",
 ];
@@ -71,7 +72,7 @@ function PaymentForm({ onSuccess }: { onSuccess: () => void }) {
         className="flex items-center justify-center w-full px-8 py-4 rounded-xl text-base font-bold transition-all duration-200 hover:opacity-90 hover:scale-[1.01] active:scale-100 disabled:opacity-50 cursor-pointer"
         style={{ background: "#00E5FF", color: "#0a0a0a", boxShadow: "0 0 48px rgba(0,229,255,0.25)" }}
       >
-        {loading ? "Processing…" : "Pay $75"}
+        {loading ? "Processing…" : `Pay $${SESSION_PRICE}`}
       </button>
     </form>
   );
@@ -145,7 +146,7 @@ function SessionCheckoutModal({ open, onClose }: { open: boolean; onClose: () =>
         {step === "info" && (
           <>
             <p className="text-sm" style={{ color: "#888" }}>
-              30-minute screenshare with the founder — <strong className="text-white">$75</strong>.
+              30-minute screenshare with the founder — <strong className="text-white">${SESSION_PRICE}</strong>.
             </p>
             <div>
               <input type="text" placeholder="Full name" value={name} onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: "" })); }} className={inputClass} style={inputStyle("name")} />
@@ -262,7 +263,7 @@ export default function Plans() {
             We&apos;re here when you need us.
           </h2>
           <p className="text-lg max-w-xl mx-auto" style={{ color: "#666666" }}>
-            AM runs on your device — no subscriptions, no monthly fees.
+            Am runs on your device — no subscriptions, no monthly fees.
             Support is available free by email, or live with the founder when you need hands-on help.
           </p>
         </div>
@@ -278,7 +279,7 @@ export default function Plans() {
           >
             <h3 className="text-lg font-bold text-white mb-1">Email Support</h3>
             <p className="text-sm mb-6" style={{ color: "#666666" }}>
-              Included with every AM. Always free.
+              Included with every Am. Always free.
             </p>
 
             <div className="flex items-baseline gap-1 mb-8">
@@ -329,7 +330,7 @@ export default function Plans() {
             </p>
 
             <div className="flex items-baseline gap-2 mb-8">
-              <span className="text-4xl font-bold text-white">$75</span>
+              <span className="text-4xl font-bold text-white">${SESSION_PRICE}</span>
               <span style={{ color: "#555555" }}>/ 30 min</span>
             </div>
 
@@ -347,7 +348,7 @@ export default function Plans() {
               className="block w-full text-center px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:opacity-90 cursor-pointer"
               style={{ background: "#00E5FF", color: "#0a0a0a" }}
             >
-              Book a Session — $75
+              {`Book a Session — $${SESSION_PRICE}`}
             </button>
             <SessionCheckoutModal open={showCheckout} onClose={() => setShowCheckout(false)} />
           </div>

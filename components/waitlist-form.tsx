@@ -42,7 +42,7 @@ export default function WaitlistForm() {
           </svg>
         </div>
         <h3 className="text-2xl font-bold mb-2" style={{ color: "#00E5FF" }}>You&apos;re on the list.</h3>
-        <p style={{ color: "#aaaaaa" }}>We&apos;ll keep you posted as AM gets closer to launch.</p>
+        <p style={{ color: "#aaaaaa" }}>We&apos;ll keep you posted as Am gets closer to launch.</p>
       </div>
     );
   }

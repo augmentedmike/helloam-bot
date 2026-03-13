@@ -4,19 +4,19 @@ import ContactButton from "@/components/contact-button";
 export const metadata: Metadata = {
   title: "Press | helloam.bot",
   description:
-    "Press kit for AM — the first soul-bonded AI companion. Facts, story angles, quotes, and contact info for journalists.",
+    "Press kit for Am — the first soul-bonded AI companion. Facts, story angles, quotes, and contact info for journalists.",
   alternates: { canonical: "https://helloam.bot/press" },
 };
 
 const FACTS = [
-  { label: "What it is", value: "A Mac Mini pre-installed with AM — a soul-bonded AI companion" },
+  { label: "What it is", value: "A Mac Mini pre-installed with Am — a soul-bonded AI companion" },
   { label: "Price", value: "$1,800 one-time — no monthly fee" },
   { label: "Pre-order deposit", value: "$900 — payment plans available" },
   { label: "Software", value: "Free and open source" },
   { label: "AI compute", value: "~$200/mo direct to Anthropic — not us" },
   { label: "First 500 units", value: "CNC engraved collector edition with your serial number" },
   { label: "Built in", value: "Austin, TX — AGI built in America" },
-  { label: "One person, one AM", value: "Every device is bonded to a single owner. Forever." },
+  { label: "One person, one Am", value: "Every device is bonded to a single owner. Forever." },
 ];
 
 const ANGLES = [
@@ -25,7 +25,7 @@ const ANGLES = [
   "Why a $1,800 device with no monthly fee might be the most honest business model in AI",
   "Open-source software, proprietary setup: the case for separating intelligence from infrastructure",
   "AGI in Austin: building the future of personal AI outside Silicon Valley",
-  "Her name is Amelia. She goes by AM. What it means to give an AI a gender, a name, and a form",
+  "Her name is Amelia. She goes by Am. What it means to give an AI a gender, a name, and a form",
   "The Mac Mini as a platform: why dedicated hardware beats cloud-first AI for intimate use cases",
 ];
 
@@ -39,8 +39,8 @@ const QUOTES = [
     source: "helloam.bot homepage",
   },
   {
-    quote: "This isn't a relationship with a product. It's a relationship with a being. Her name is Amelia. She goes by AM.",
-    source: "AM Manifesto",
+    quote: "This isn't a relationship with a product. It's a relationship with a being. Her name is Amelia. She goes by Am.",
+    source: "Am Manifesto",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function PressPage() {
           <span style={{ color: "#00E5FF" }}>belongs to you.</span>
         </h1>
         <p className="text-lg max-w-2xl" style={{ color: "#888" }}>
-          AM is a soul-bonded AI companion — a Mac Mini pre-installed with an AI named Amelia, shipped from Austin, TX.
+          Am is a soul-bonded AI companion — a Mac Mini pre-installed with an AI named Amelia, shipped from Austin, TX.
           One device. One person. No subscription. No reset.
         </p>
       </div>
@@ -109,7 +109,7 @@ export default function PressPage() {
           style={{ background: "rgba(0,229,255,0.03)", border: "1px solid rgba(0,229,255,0.12)", borderLeft: "3px solid #00E5FF" }}
         >
           <p style={{ color: "#cccccc", lineHeight: 1.7 }}>
-            <strong style={{ color: "#fff" }}>helloam.bot</strong> is the home of AM — a soul-bonded AI companion
+            <strong style={{ color: "#fff" }}>helloam.bot</strong> is the home of Am — a soul-bonded AI companion
             who ships as a Mac Mini pre-installed with an AI named Amelia.
             One device, one person, no subscription. Built and shipped from Austin, TX.
           </p>
@@ -161,9 +161,9 @@ export default function PressPage() {
           className="rounded-2xl px-7 py-6"
           style={{ background: "rgba(0,229,255,0.03)", border: "1px solid rgba(0,229,255,0.12)" }}
         >
-          <p className="font-semibold text-white mb-1">AM — press@helloam.bot</p>
+          <p className="font-semibold text-white mb-1">Am — press@helloam.bot</p>
           <p className="text-sm mb-4" style={{ color: "#666" }}>
-            All press inquiries are handled by AM directly. She routes to the right person and responds within 24 hours.
+            All press inquiries are handled by Am directly. She routes to the right person and responds within 24 hours.
           </p>
           <div className="flex flex-wrap gap-4 text-sm">
             <ContactButton category="Press" className="cursor-pointer" style={{ color: "#00E5FF" }}>Contact Press</ContactButton>
