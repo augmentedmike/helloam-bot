@@ -118,10 +118,22 @@ function CheckoutModal({ open, onClose, color, mode, qty, deposit }: { open: boo
   );
 }
 
-const SINGLE_PRICE = Number(process.env.NEXT_PUBLIC_SINGLE_PRICE) || 1500;
-const RACK_PRICE = Number(process.env.NEXT_PUBLIC_RACK_PRICE) || 1200;
-const RACK_MAX_PER_RACK = Number(process.env.NEXT_PUBLIC_RACK_MAX_PER_RACK) || 6;
-const RACK_MAX_PER_CUSTOMER = Number(process.env.NEXT_PUBLIC_RACK_MAX_PER_CUSTOMER) || 12;
+// Next.js inlines NEXT_PUBLIC_ vars at build time only when accessed as
+// literal `process.env.NEXT_PUBLIC_X` — dynamic key lookup won't work in
+// client components. Validate at module load so a missing var crashes
+// immediately instead of silently producing NaN prices.
+function requireClientEnv(val: string | undefined, name: string): number {
+  if (!val) throw new Error(`Missing required env var: ${name}`);
+  const num = Number(val);
+  if (isNaN(num)) throw new Error(`Invalid number for env var ${name}: ${val}`);
+  return num;
+}
+
+const SINGLE_PRICE = requireClientEnv(process.env.NEXT_PUBLIC_SINGLE_PRICE, "NEXT_PUBLIC_SINGLE_PRICE");
+const RACK_PRICE = requireClientEnv(process.env.NEXT_PUBLIC_RACK_PRICE, "NEXT_PUBLIC_RACK_PRICE");
+const SESSION_PRICE = requireClientEnv(process.env.NEXT_PUBLIC_SESSION_PRICE, "NEXT_PUBLIC_SESSION_PRICE");
+const RACK_MAX_PER_RACK = requireClientEnv(process.env.NEXT_PUBLIC_RACK_MAX_PER_RACK, "NEXT_PUBLIC_RACK_MAX_PER_RACK");
+const RACK_MAX_PER_CUSTOMER = requireClientEnv(process.env.NEXT_PUBLIC_RACK_MAX_PER_CUSTOMER, "NEXT_PUBLIC_RACK_MAX_PER_CUSTOMER");
 const SINGLE_DEPOSIT = SINGLE_PRICE / 2;
 const RACK_DEPOSIT = RACK_PRICE / 2;
 
@@ -362,7 +374,7 @@ export default function Device() {
                 { label: "Am Device", sub: "Mac Mini M1 8GB · skin · setup · shipping", price: mode === "rack" ? `$${RACK_PRICE.toLocaleString()}/unit` : `$${SINGLE_PRICE.toLocaleString()}`, bright: false },
                 { label: "Am Software", sub: "Free and open source, always", price: "Free", bright: true },
                 { label: "Anthropic Compute", sub: `Your AI fuel — ${cap(pronouns.subject)} pays Anthropic directly`, price: "$20–$200/mo", bright: false },
-                { label: "Support", sub: "Email always free · Live sessions $100/30 min", price: "As needed", bright: false },
+                { label: "Support", sub: `Email always free · Live sessions $${SESSION_PRICE}/30 min`, price: "As needed", bright: false },
               ].map((row) => (
                 <div key={row.label} className="flex items-start justify-between gap-4">
                   <div>

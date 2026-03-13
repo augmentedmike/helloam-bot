@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const SESSION_PRICE_CENTS = Number(process.env.SESSION_PRICE_CENTS) || 7500;
+import { requireEnv } from "@/lib/env";
+
+const SESSION_PRICE_CENTS = requireEnv("SESSION_PRICE_CENTS");
 
 export async function POST(req: NextRequest) {
   try {

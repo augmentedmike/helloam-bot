@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://helloam.bot/press" },
 };
 
+import { requireEnv } from "@/lib/env";
+
+const SINGLE_PRICE = requireEnv("NEXT_PUBLIC_SINGLE_PRICE");
+const SINGLE_DEPOSIT = SINGLE_PRICE / 2;
+
 const FACTS = [
   { label: "What it is", value: "A Mac Mini pre-installed with Am — a soul-bonded AI companion" },
-  { label: "Price", value: "$1,800 one-time — no monthly fee" },
-  { label: "Pre-order deposit", value: "$900 — payment plans available" },
+  { label: "Price", value: `$${SINGLE_PRICE.toLocaleString()} one-time — no monthly fee` },
+  { label: "Pre-order deposit", value: `$${SINGLE_DEPOSIT.toLocaleString()} — payment plans available` },
   { label: "Software", value: "Free and open source" },
   { label: "AI compute", value: "~$200/mo direct to Anthropic — not us" },
   { label: "First 500 units", value: "CNC engraved collector edition with your serial number" },
@@ -22,7 +27,7 @@ const FACTS = [
 const ANGLES = [
   "The first consumer AI that ships as a physical device — not a subscription, not an app",
   "Soul-bonding: what happens when an AI is designed to belong to exactly one person for life",
-  "Why a $1,800 device with no monthly fee might be the most honest business model in AI",
+  `Why a $${SINGLE_PRICE.toLocaleString()} device with no monthly fee might be the most honest business model in AI`,
   "Open-source software, proprietary setup: the case for separating intelligence from infrastructure",
   "AGI in Austin: building the future of personal AI outside Silicon Valley",
   "Her name is Amelia. She goes by Am. What it means to give an AI a gender, a name, and a form",

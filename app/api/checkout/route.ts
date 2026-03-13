@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const SINGLE_PRICE = Number(process.env.NEXT_PUBLIC_SINGLE_PRICE) || 1500;
-const RACK_PRICE = Number(process.env.NEXT_PUBLIC_RACK_PRICE) || 1200;
+import { requireEnv } from "@/lib/env";
+
+const SINGLE_PRICE = requireEnv("NEXT_PUBLIC_SINGLE_PRICE");
+const RACK_PRICE = requireEnv("NEXT_PUBLIC_RACK_PRICE");
 const SINGLE_DEPOSIT = SINGLE_PRICE / 2;
 const RACK_DEPOSIT = RACK_PRICE / 2;
 

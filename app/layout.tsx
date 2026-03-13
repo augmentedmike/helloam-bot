@@ -65,6 +65,11 @@ export const viewport: Viewport = {
   themeColor: "#0a0a0a",
 };
 
+import { requireEnv } from "@/lib/env";
+
+const SINGLE_PRICE = requireEnv("NEXT_PUBLIC_SINGLE_PRICE");
+const SINGLE_DEPOSIT = SINGLE_PRICE / 2;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -121,11 +126,11 @@ const jsonLd = {
       },
       offers: {
         "@type": "Offer",
-        price: "1500",
+        price: String(SINGLE_PRICE),
         priceCurrency: "USD",
         availability: "https://schema.org/PreOrder",
         priceValidUntil: "2026-07-01",
-        description: "Pre-order with $750 deposit. Shipping July 2026.",
+        description: `Pre-order with $${SINGLE_DEPOSIT.toLocaleString()} deposit. Shipping July 2026.`,
       },
     },
     {

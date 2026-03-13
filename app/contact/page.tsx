@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://helloam.bot/contact" },
 };
 
+import { requireEnv } from "@/lib/env";
+
+const SESSION_PRICE = requireEnv("NEXT_PUBLIC_SESSION_PRICE");
+
 const CHANNELS = [
   {
     label: "General",
@@ -34,7 +38,7 @@ const CHANNELS = [
   {
     label: "Support",
     category: "Support",
-    description: "Technical help is free by email. Live sessions with the founder are $100 / 30 min.",
+    description: `Technical help is free by email. Live sessions with the founder are $${SESSION_PRICE} / 30 min.`,
   },
 ];
 
