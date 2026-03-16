@@ -31,14 +31,15 @@ export function PronounTag({ case: pronounCase }: { case: PronounCase }) {
         title="Click to change pronouns"
         style={{
           font: "inherit",
-          color: "inherit",
+          color: "#00E5FF",
           lineHeight: "inherit",
           background: "none",
           border: "none",
           padding: "0",
           cursor: "pointer",
-          borderBottom: open ? "1px solid rgba(0,229,255,0.8)" : "1px dashed rgba(0,229,255,0.45)",
-          transition: "border-color 0.15s",
+          borderBottom: open ? "1px solid #00E5FF" : "1px dashed rgba(0,229,255,0.5)",
+          transition: "border-color 0.15s, opacity 0.15s",
+          opacity: open ? 1 : 0.85,
         }}
       >
         {display}
