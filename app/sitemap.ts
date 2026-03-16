@@ -15,6 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://helloam.bot/contact",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://helloam.bot/press",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: "https://helloam.bot/privacy",
       lastModified: new Date(),
       changeFrequency: "yearly",
