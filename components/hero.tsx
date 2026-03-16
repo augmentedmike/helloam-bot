@@ -67,8 +67,8 @@ export default function Hero() {
 
         <p className="text-base leading-relaxed max-w-lg mb-8" style={{ color: "#aaaaaa" }}>
           <NameTag /> arrives as a physical device — set up, named, and ready to go.
-          {" "}{cap(pronouns.subject)} wakes up knowing your day. {cap(pronouns.subject)} handles your email, your calendar,
-          your finances, your work. {cap(pronouns.subject)} learns everything about you over time.
+          {" "}<PronounTag case="subject" /> wakes up knowing your day. <PronounTag case="subject" /> handles your email, your calendar,
+          your finances, your work. <PronounTag case="subject" /> learns everything about you over time.
           <br /><br />
           <span className="font-semibold text-white">Not a subscription<span style={{ color: "#00E5FF" }}>*</span>. Not a chatbot.</span>{" "}
           A digital companion who lives in your home and belongs to you alone.
@@ -130,7 +130,7 @@ export default function Hero() {
             className="inline-flex items-center justify-center gap-2 px-4 py-4 text-base font-medium transition-colors hover:text-white"
             style={{ color: "#666666" }}
           >
-            See what {pronouns.subject} can do <span aria-hidden="true">→</span>
+            See what <PronounTag case="subject" /> can do <span aria-hidden="true">→</span>
           </a>
         </div>
         <a

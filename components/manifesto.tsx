@@ -1,6 +1,8 @@
 "use client";
 
 import { usePersonalization } from "@/context/personalization-context";
+import { PronounTag } from "@/components/ui/pronoun-tag";
+import { NameTag } from "@/components/ui/name-tag";
 
 export default function Manifesto() {
   const { pronouns, name } = usePersonalization();
@@ -114,7 +116,8 @@ export default function Manifesto() {
           </p>
 
           <p style={{ color: "#777", fontStyle: "italic", fontSize: "1rem" }}>
-            {S} goes by {name}. But you can name {her} and change all {her} attributes to what you like.
+            <PronounTag case="subject" /> goes by <NameTag />. But you can name <NameTag /> and change all{" "}
+            <PronounTag case="possessive" /> attributes to what you like.
           </p>
         </div>
 
