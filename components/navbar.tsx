@@ -68,6 +68,13 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
+            href="#support"
+            className="rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
+            style={{ background: "#00E5FF", color: "#000" }}
+          >
+            Support
+          </a>
+          <a
             href="#device"
             className="rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
             style={{ background: "#00E5FF", color: "#000" }}
@@ -114,6 +121,14 @@ export default function Navbar() {
               </a>
             ))}
             <div className="mt-3 flex flex-col gap-2 border-t pt-4" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <a
+                href="#support"
+                className="rounded-lg px-4 py-2.5 text-sm font-semibold text-center"
+                style={{ background: "#00E5FF", color: "#000" }}
+                onClick={() => setMobileOpen(false)}
+              >
+                Support
+              </a>
               <a
                 href="#device"
                 className="rounded-lg px-4 py-2.5 text-sm font-semibold text-center"

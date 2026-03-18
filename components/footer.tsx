@@ -24,6 +24,7 @@ export default function Footer() {
             {[
               { label: "Press",       href: "/press",   external: false },
               { label: "Contact",     href: "/contact", external: false },
+              { label: "Support",     href: "/#support", external: false },
             ].map((l) => (
               <a
                 key={l.label}
