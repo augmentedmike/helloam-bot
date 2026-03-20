@@ -95,6 +95,11 @@ const jsonLd = {
       publisher: {
         "@id": "https://helloam.bot/#organization",
       },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://helloam.bot/?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "SoftwareApplication",
@@ -115,6 +120,20 @@ const jsonLd = {
       publisher: {
         "@id": "https://helloam.bot/#organization",
       },
+      potentialAction: [
+        {
+          "@type": "JoinAction",
+          name: "Join Am Mailing List",
+          target: "https://helloam.bot/#waitlist",
+          description: "Subscribe to the helloam.bot mailing list for launch updates and early access.",
+        },
+        {
+          "@type": "ApplyAction",
+          name: "Apply for Pilot Program",
+          target: "https://helloam.bot/#pilot",
+          description: "Apply for the helloam Pilot Program for early hardware access.",
+        },
+      ],
     },
     {
       "@type": "Product",
@@ -133,6 +152,14 @@ const jsonLd = {
         priceValidUntil: "2026-07-01",
         description: `Pre-order with $${SINGLE_DEPOSIT.toLocaleString()} deposit. Shipping July 2026.`,
       },
+      potentialAction: [
+        {
+          "@type": "OrderAction",
+          name: "Pre-order Am Device",
+          target: "https://helloam.bot/#device",
+          description: `Pre-order the Am device with a $${SINGLE_DEPOSIT.toLocaleString()} deposit via Stripe.`,
+        },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -227,11 +254,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* WebMCP — Web Model Context Protocol for AI agent tool discovery (Chrome 146+) */}
+        {/* WebMCP — Web Model Context Protocol for AI agent tool discovery */}
         <meta name="model-context" content="supported" />
-        <meta name="webmcp-version" content="1.0" />
-        <meta name="webmcp-site" content="helloam.bot" />
-        <link rel="webmcp-manifest" href="/.well-known/webmcp.json" />
+        <meta name="model-context-version" content="1.0" />
+        <meta name="model-context-site" content="helloam.bot" />
+        <link rel="modelcontext" href="/.well-known/modelcontext" />
         <script defer src="/webmcp-tools.js" />
         <script defer src="/webmcp-init-helloam.js" />
         {/* Plausible Analytics — privacy-first, no cookies, GDPR compliant */}

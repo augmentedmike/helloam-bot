@@ -59,7 +59,7 @@ function PaymentForm({ onSuccess }: { onSuccess: () => void }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" toolname="book_helloam_session" tooldescription="Book a 30-minute live session with the founder via Stripe payment.">
       <PaymentElement
         options={{
           layout: "tabs",
