@@ -2,6 +2,8 @@
  * WebMCP initialization for helloam.bot
  * Include after webmcp-tools.js
  *
+ * Source: shared/webmcp/webmcp-init-helloam.js (synced via scripts/sync-webmcp.sh)
+ *
  * Tools registered:
  *   - join_helloam_mailing_list (declarative — auto-discovered from form[toolname])
  *   - preorder_helloam_device (imperative — Stripe redirect checkout)
@@ -10,12 +12,16 @@
  *   - check_helloam_availability (imperative — queries booking /api/slots)
  *   - contact_helloam (imperative — contact form submission)
  */
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof WebMCP === 'undefined') return;
+(function () {
+  // Feature detection: only run WebMCP code on browsers that support it (Chrome 146+)
+  if (!('modelContext' in navigator)) return;
 
-  WebMCP.init({
-    site: 'helloam.bot',
-    tools: [
+  function doInit() {
+    if (typeof WebMCP === 'undefined') return;
+
+    WebMCP.init({
+      site: 'helloam.bot',
+      tools: [
       // --- Pre-Order (imperative — Stripe redirect, not a plain form) ---
       {
         name: 'preorder_helloam_device',
@@ -305,10 +311,17 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
       }
-    ]
-  });
+      ]
+    });
 
-  // The join_helloam_mailing_list tool is registered declaratively via
-  // toolname="join_helloam_mailing_list" on the waitlist <form> element.
-  // webmcp-tools.js auto-discovers it via discoverDeclarativeForms().
-});
+    // The join_helloam_mailing_list tool is registered declaratively via
+    // toolname="join_helloam_mailing_list" on the waitlist <form> element.
+    // webmcp-tools.js auto-discovers it via discoverDeclarativeForms().
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', doInit);
+  } else {
+    doInit();
+  }
+})();

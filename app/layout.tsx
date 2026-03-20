@@ -231,7 +231,7 @@ export default function RootLayout({
         <meta name="model-context-protocol" content="supported" />
         <meta name="webmcp-version" content="1.0" />
         <meta name="webmcp-site" content="helloam.bot" />
-        <link rel="webmcp-manifest" href="/.well-known/webmcp.json" />
+        <link rel="webmcp-manifest" href="/.well-known/modelcontext" />
         <script defer src="/webmcp-tools.js" />
         <script defer src="/webmcp-init-helloam.js" />
         {/* Plausible Analytics — privacy-first, no cookies, GDPR compliant */}

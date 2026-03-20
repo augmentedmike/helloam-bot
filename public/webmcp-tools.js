@@ -89,8 +89,12 @@
             }
           });
 
-          // Submit the form
-          form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+          // Submit the form (use requestSubmit for proper SubmitEvent dispatch)
+          if (typeof form.requestSubmit === 'function') {
+            form.requestSubmit();
+          } else {
+            form.dispatchEvent(new SubmitEvent('submit', { bubbles: true, cancelable: true, submitter: form.querySelector('button[type="submit"]') }));
+          }
 
           return {
             content: [{
