@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import LayoutShell from "@/components/layout-shell";
+import WebMCPPolyfill from "@/components/webmcp-polyfill";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -255,9 +256,9 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
       <head>
         {/* WebMCP — Web Model Context Protocol for AI agent tool discovery */}
-        <meta name="model-context" content="supported" />
-        <meta name="model-context-version" content="1.0" />
-        <meta name="model-context-site" content="helloam.bot" />
+        <meta name="model-context-protocol" content="supported" />
+        <meta name="webmcp-version" content="1.0" />
+        <meta name="webmcp-site" content="helloam.bot" />
         <link rel="modelcontext" href="/.well-known/modelcontext" />
         <script defer src="/webmcp-tools.js" />
         <script defer src="/webmcp-init-helloam.js" />
@@ -281,6 +282,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <WebMCPPolyfill />
         <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
