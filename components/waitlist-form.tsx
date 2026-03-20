@@ -54,15 +54,23 @@ export default function WaitlistForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4"
+      noValidate
+      toolname="join_helloam_mailing_list"
+      tooldescription="Subscribe to the helloam.bot mailing list. Requires name and email address."
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {["name", "email"].map((field) => (
           <div key={field}>
             <label htmlFor={`waitlist-${field}`} className="sr-only">{field === "name" ? "Your name" : "Your email"}</label>
             <input
               id={`waitlist-${field}`}
+              name={field}
               type={field === "email" ? "email" : "text"}
               placeholder={field === "name" ? "Your name" : "Your email"}
+              aria-label={field === "name" ? "Your name" : "Your email address"}
               value={field === "name" ? name : email}
               onChange={(e) => field === "name" ? setName(e.target.value) : setEmail(e.target.value)}
               required

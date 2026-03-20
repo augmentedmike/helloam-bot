@@ -111,11 +111,14 @@ export default function ContactModal({ open, onClose, category = "General", subj
           <form
             onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}
             className="space-y-4"
+            toolname="contact_helloam"
+            tooldescription="Send a contact message to the helloam team. Provide your name, email, and message."
           >
             <div>
               <label className="block text-xs font-medium mb-1.5" style={{ color: "#666" }}>Name</label>
               <input
                 type="text"
+                name="name"
                 value={name}
                 onChange={(e) => { setName(e.target.value); setFieldErrors((f) => ({ ...f, name: undefined })); }}
                 className="w-full rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:ring-1"
@@ -128,6 +131,7 @@ export default function ContactModal({ open, onClose, category = "General", subj
               <label className="block text-xs font-medium mb-1.5" style={{ color: "#666" }}>Email</label>
               <input
                 type="email"
+                name="email"
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); setFieldErrors((f) => ({ ...f, email: undefined })); }}
                 className="w-full rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:ring-1"
@@ -139,6 +143,7 @@ export default function ContactModal({ open, onClose, category = "General", subj
             <div>
               <label className="block text-xs font-medium mb-1.5" style={{ color: "#666" }}>Message</label>
               <textarea
+                name="message"
                 value={message}
                 onChange={(e) => { setMessage(e.target.value); setFieldErrors((f) => ({ ...f, message: undefined })); }}
                 rows={4}
