@@ -116,8 +116,9 @@ const jsonLd = {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
-        availability: "https://schema.org/PreOrder",
-        description: "Join the waitlist for early access.",
+        availability: "https://schema.org/InStock",
+        url: "https://helloam.bot",
+        description: "Free to join the waitlist for early access.",
       },
       publisher: {
         "@id": "https://helloam.bot/#organization",
@@ -157,7 +158,41 @@ const jsonLd = {
         priceCurrency: "USD",
         availability: "https://schema.org/PreOrder",
         priceValidUntil: "2026-07-01",
+        url: "https://helloam.bot/#device",
+        itemCondition: "https://schema.org/NewCondition",
+        seller: {
+          "@id": "https://helloam.bot/#organization",
+        },
         description: `Pre-order with $${SINGLE_DEPOSIT.toLocaleString()} deposit. Shipping July 2026.`,
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 30,
+            maxValue: 90,
+            unitCode: "DAY",
+          },
+        },
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "USD",
+        },
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn",
       },
       potentialAction: [
         {
