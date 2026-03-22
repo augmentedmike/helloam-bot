@@ -41,6 +41,28 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Open Source Tools */}
+        <div className="flex items-center justify-center gap-6 flex-wrap mb-8">
+          {[
+            { label: "Voice-to-Text Hotkey Tool", href: "https://github.com/augmentedmike/whisper-hotkey" },
+            { label: "AI Comic Generator CLI",    href: "https://github.com/augmentedmike/comic-cli" },
+            { label: "Claude Image Optimizer",     href: "https://github.com/augmentedmike/claude-img-opt" },
+          ].map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-medium transition-colors"
+              style={{ color: "#a3a3a3" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f5f5")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#a3a3a3")}
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+
         {/* Legal */}
         <div
           className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"
