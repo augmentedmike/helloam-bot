@@ -109,6 +109,7 @@ const jsonLd = {
       applicationCategory: "PersonalAssistant",
       operatingSystem: "Web",
       url: "https://helloam.bot",
+      image: "https://helloam.bot/og-image.png",
       description:
         "Am is a personal AI companion who manages your life, knows your story, and grows with you. Soul-bonded to one person — you.",
       offers: {
@@ -142,6 +143,11 @@ const jsonLd = {
       name: "Am Device",
       description:
         "A dedicated personal AI device — Mac Mini pre-installed with Am, your personal AI companion. Ships configured, named, and ready to go.",
+      image: [
+        "https://helloam.bot/am/am-desk.webp",
+        "https://helloam.bot/am/am-mockup.webp",
+        "https://helloam.bot/am/am-room.webp",
+      ],
       brand: {
         "@id": "https://helloam.bot/#organization",
       },
