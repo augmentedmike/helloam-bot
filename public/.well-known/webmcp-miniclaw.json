@@ -1,37 +1,22 @@
 {
   "version": "1.0",
   "site": "miniclaw.bot",
-  "description": "MiniClaw — AI-native plugin ecosystem by Mike O'Neal. Book consultations, explore the portfolio, chat with Am, and search documentation.",
+  "description": "MiniClaw — AI-native plugin ecosystem by Mike O'Neal. Download the installer, join the waitlist, or explore plugins.",
   "tools": [
     {
-      "name": "book-consultation",
-      "description": "Book a paid consultation with Mike O'Neal",
-      "path": "/booking"
+      "name": "download-miniclaw",
+      "description": "Download the MiniClaw bootstrap installer for macOS",
+      "path": "/install/download"
     },
     {
-      "name": "view-portfolio",
-      "description": "View the MiniClaw project portfolio",
-      "path": "/#portfolio"
+      "name": "join-waitlist",
+      "description": "Join the MiniClaw waitlist for early access",
+      "endpoint": "/api/subscribe"
     },
     {
-      "name": "send-message",
-      "description": "Send a message or inquiry via contact form",
-      "path": "/contact"
-    },
-    {
-      "name": "check_availability",
-      "description": "Check available consultation time slots",
-      "endpoint": "/api/slots"
-    },
-    {
-      "name": "chat_with_am",
-      "description": "Chat with Am, the AI assistant (requires WebSocket connection)",
-      "dynamic": true
-    },
-    {
-      "name": "search_docs",
-      "description": "Search MiniClaw documentation",
-      "endpoint": "/api/docs/search"
+      "name": "check-plugin-list",
+      "description": "View the list of available MiniClaw plugins",
+      "path": "/#plugins"
     }
   ],
   "support": {
