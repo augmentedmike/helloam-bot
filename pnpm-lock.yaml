@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@mcp-b/global':
-        specifier: ^2.2.0
-        version: 2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)
       '@stripe/react-stripe-js':
         specifier: ^5.6.1
         version: 5.6.1(@stripe/stripe-js@8.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -44,12 +41,6 @@ importers:
       web-haptics:
         specifier: ^0.0.6
         version: 0.0.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      zod:
-        specifier: ^4.3.6
-        version: 4.3.6
-      zod-to-json-schema:
-        specifier: ^3.25.1
-        version: 3.25.1(zod@4.3.6)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -148,9 +139,6 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
-
-  '@cfworker/json-schema@4.1.1':
-    resolution: {integrity: sha512-gAmrUZSGtKc3AiBL71iNWxDsyUC5uMaKKGdvzYsBoTW/xi42JQHl7eKV2OYzCUqvc+D2RCcf7EXY2iCyFIk6og==}
 
   '@emnapi/core@1.8.1':
     resolution: {integrity: sha512-AvT9QFpxK0Zd8J0jopedNm+w/2fIzvtPKPjqyw9jwvBaReTTqPBk9Hixaz7KbjimP+QNz605/XnjFcDAL2pqBg==}
@@ -368,32 +356,6 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@mcp-b/global@2.2.0':
-    resolution: {integrity: sha512-3+FNuVXPGyhzYsVPL5UItMkTF+GD6E3iHEmuJY0yydjjpWtlqrUw7b7PLhyuymKcc1+jTMunyrr3Zps0uPEfiw==}
-    engines: {node: '>=18'}
-
-  '@mcp-b/transports@2.2.0':
-    resolution: {integrity: sha512-zSqYekrmou72z67GF5jXaDnQdhT84Hlmi4meshm0zMn71GlaYmHhXfb3UsgW3xQ7Y5CexQ4U9L9IrdG6/+MTfA==}
-
-  '@mcp-b/webmcp-polyfill@2.2.0':
-    resolution: {integrity: sha512-as49JP4MHXVMMVNzD8938EsiU2tEzWNk7Un6c6C/xK5rstkIrQZQsVLbH7NFtmgMb6bbryzSqg9JWSFIxkU27Q==}
-    engines: {node: '>=18'}
-
-  '@mcp-b/webmcp-ts-sdk@2.2.0':
-    resolution: {integrity: sha512-IzjwqrpbbASbAJxpr5k5m1ryiELGdnohDXzpLuB7UK2VI1rsAwQ04j59uRkMvaqZ4iwvxHTzKk+AajRB57OcPw==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      zod: ^3.25 || ^4.0
-      zod-to-json-schema: ^3.25.0
-    peerDependenciesMeta:
-      zod:
-        optional: true
-      zod-to-json-schema:
-        optional: true
-
-  '@mcp-b/webmcp-types@2.2.0':
-    resolution: {integrity: sha512-1/UYAwQKBkqRgK18GkbGR4m6Cn9vz6Qy6pTL5LIIinUOhR5dMLaNl/blH/tJT+nJleMmgDoFZWGAmmr+fAz2PQ==}
-
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
@@ -472,9 +434,6 @@ packages:
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
-
-  '@standard-schema/spec@1.1.0':
-    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
   '@stripe/react-stripe-js@5.6.1':
     resolution: {integrity: sha512-5xBrjkGmFvKvpMod6VvpOaFaa67eRbmieKeFTePZyOr/sUXzm7A3YY91l330pS0usUst5PxTZDUZHWfOc0v1GA==}
@@ -2092,19 +2051,11 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod-to-json-schema@3.25.1:
-    resolution: {integrity: sha512-pM/SU9d3YAggzi6MtR4h7ruuQlqKtad8e9S0fmxcMi+ueAK5Korys/aWcV9LIIHTVbj01NdzxcnXSN+O74ZIVA==}
-    peerDependencies:
-      zod: ^3.25 || ^4
-
   zod-validation-error@4.0.2:
     resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
-
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
@@ -2212,8 +2163,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
-
-  '@cfworker/json-schema@4.1.1': {}
 
   '@emnapi/core@1.8.1':
     dependencies:
@@ -2404,47 +2353,6 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mcp-b/global@2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)':
-    dependencies:
-      '@mcp-b/transports': 2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))
-      '@mcp-b/webmcp-polyfill': 2.2.0
-      '@mcp-b/webmcp-ts-sdk': 2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)
-      '@mcp-b/webmcp-types': 2.2.0
-    transitivePeerDependencies:
-      - zod
-      - zod-to-json-schema
-
-  '@mcp-b/transports@2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))':
-    dependencies:
-      '@mcp-b/webmcp-ts-sdk': 2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@3.25.76)
-      zod: 3.25.76
-    transitivePeerDependencies:
-      - zod-to-json-schema
-
-  '@mcp-b/webmcp-polyfill@2.2.0':
-    dependencies:
-      '@cfworker/json-schema': 4.1.1
-      '@mcp-b/webmcp-types': 2.2.0
-      '@standard-schema/spec': 1.1.0
-
-  '@mcp-b/webmcp-ts-sdk@2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@3.25.76)':
-    dependencies:
-      '@mcp-b/webmcp-polyfill': 2.2.0
-      '@mcp-b/webmcp-types': 2.2.0
-    optionalDependencies:
-      zod: 3.25.76
-      zod-to-json-schema: 3.25.1(zod@4.3.6)
-
-  '@mcp-b/webmcp-ts-sdk@2.2.0(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)':
-    dependencies:
-      '@mcp-b/webmcp-polyfill': 2.2.0
-      '@mcp-b/webmcp-types': 2.2.0
-    optionalDependencies:
-      zod: 4.3.6
-      zod-to-json-schema: 3.25.1(zod@4.3.6)
-
-  '@mcp-b/webmcp-types@2.2.0': {}
-
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
       '@emnapi/core': 1.8.1
@@ -2501,8 +2409,6 @@ snapshots:
   '@nolyfill/is-core-module@1.0.39': {}
 
   '@rtsao/scc@1.1.0': {}
-
-  '@standard-schema/spec@1.1.0': {}
 
   '@stripe/react-stripe-js@5.6.1(@stripe/stripe-js@8.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -4351,14 +4257,8 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-to-json-schema@3.25.1(zod@4.3.6):
-    dependencies:
-      zod: 4.3.6
-
   zod-validation-error@4.0.2(zod@4.3.6):
     dependencies:
       zod: 4.3.6
-
-  zod@3.25.76: {}
 
   zod@4.3.6: {}
